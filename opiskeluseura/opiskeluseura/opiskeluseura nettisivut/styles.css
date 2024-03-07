@@ -96,7 +96,6 @@ body {
 }
 
 .logo {
-    margin-top: 10px;
-    margin-left: 25px;
-    width: 300px;
+    width: 100 %;
+    align-items: center;
 }
