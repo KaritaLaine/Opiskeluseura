@@ -1,0 +1,165 @@
+/* DEFAULT WRAPPER */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(221, 181, 207);
+  background: linear-gradient(0deg, rgb(252, 203, 234) 0%, rgb(212, 204, 250) 100%);
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: auto;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 19.5px;
+  min-height: calc(100vh - 370px);
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  width: 100%;
+  height: 130px;
+}
+
+.vasen-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  cursor: pointer;
+  resize: none;
+  max-width: 230px;
+  height: auto;
+  width: 200px;
+  padding: 20px 30px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 13pt;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  padding: 15px 20px;
+}
+
+/* KIRJAUDU ULOS PAINIKE HEADERISSA */
+
+.oikea-header {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  background-color: #b07c9e;
+  width: 170px;
+  height: 50px;
+  display: inline-block;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 50px;
+  /* font-weight: bold; */
+  border-style: solid;
+  border-color:#9e658a;
+  border-width: 1px;
+}
+
+.right:hover {
+  background-color: #9e658a;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.right a {
+  font-size: 13pt;
+  text-decoration: none;
+  color: white;
+}
+
+/* FOOTER */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #383355;
+  height: 180px;
+}
+
+.yhteystiedot {
+  color: #F9F9F9;
+}
+
+.yhteystiedot p {
+  margin-left: 3px;
+  margin-top: -10px;
+}
+
+footer h3 {
+  color: #b07c9e
+}
+
+.footerlogo img {
+  height: 20px;
+}
+
+/* ETUSIVU */
+.info {
+  padding: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.infoteksti {
+  max-width: 1040px;
+  font-size: 19.5px;
+  padding-right: 40px;
+  margin-top: 50px;
+  text-align:center;
+}
+
+.infoteksti p {
+  width: 700px;
+}
+
+.linkki {
+  color:#9e658a;
+  margin-top: 30px;
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.infoteksti h1 {
+  font-size: 60px;
+  color:#383355;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.logo-et {
+  max-width: 160px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+}

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     {% load static %}
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css'%}">
 </head>
 <body>
     <div class="login-container">
         <div class="image-container">
             <!-- Image is contained within its own container -->
-            <img src="opiskelu.jpg.jpg" alt="Placeholder Image">
+            <img src="{% static 'opiskelu.jpg'%}" alt="Placeholder Image">
         </div>
         <div class="kirjautuminen">
             <div class="kirjautumiskortti">
@@ -25,7 +25,7 @@
                     Ei käyttäjää? <a href="#" class="ohje2">Rekisteröidy</a>
                 </div>
                 <div class="logo">
-                    <img src="Tunnus-rosalila.svg" alt="Logo">
+                    <img src="{% static 'Tunnus-rosalila.svg'%}" alt="Logo">
                 </div>
             </div>
         </div>
