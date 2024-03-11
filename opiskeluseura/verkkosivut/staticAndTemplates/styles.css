@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #b07c9e;
+    background-color: rgb(176,124,158);
+    background: linear-gradient(0deg, rgba(176,124,158,1) 0%, rgba(56,51,85,1) 100%);
     margin: 0;
     padding: 0;
 }
@@ -23,7 +24,7 @@ body {
     width: 100%; /* Make the image fill its container horizontally */
     height: 100%; /* Make the image fill its container vertically */
     object-fit: cover; /* Ensure the image maintains its aspect ratio and covers the container */
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px;
 }
 
 .kirjautuminen .kirjautumiskortti {
@@ -33,7 +34,7 @@ body {
     height: 600px;
     box-shadow: #412243 5px 5px 10px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 0px 20px 20px 0px;
     opacity:0.8;
 }
 
