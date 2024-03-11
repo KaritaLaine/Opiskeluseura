@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b07c9e;
+    margin: 0;
+    padding: 0;
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center; /* Keskitetään vaakasuunnassa */
+    align-items: center; /* Keskitetään pystysuunnassa */
+    height: 100vh;
+}
+
+.image-container {
+    height: 640px; /* Set the height to match the height of the kirjautumiskortti */
+    width: calc(100% - 10px); /* Adjust width to account for padding and margin */
+    max-width: 1000px; /* Limit the width of the image container */
+}
+
+.image-container img {
+    width: 100%; /* Make the image fill its container horizontally */
+    height: 100%; /* Make the image fill its container vertically */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio and covers the container */
+    border-radius: 20px;
+}
+
+.kirjautuminen .kirjautumiskortti {
+    background-color: white;
+    width: 500px; /* Adjusted width to leave a gap between the border and the box */
+    max-width: 900px; /* Ensure the box doesn't exceed a certain width */
+    height: 600px;
+    box-shadow: #412243 5px 5px 10px;
+    text-align: center;
+    border-radius: 20px;
+    opacity:0.8;
+}
+
+.kirjautumiskortti {
+    background-color: white;
+    width:550px;
+    height: 600px;
+    box-shadow: #d916eb 5px 5px 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+.otsikko {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #b07c9e; /* Updated title color */
+}
+
+.k-form {
+    width: 300px;
+    height: 60px;
+    margin: 5px;
+    background-color: rgb(238, 238, 238);
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Rounded border */
+}
+
+.p-nappi {
+    background-color: #df2070;
+    color: white;
+    width: 300px;
+    height: 60px;
+    font-weight: normal;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px; /* Rounded border */
+    cursor: pointer;
+}
+
+.p-nappi:hover {
+    background-color: #b31f57; /* Darker color on hover */
+}
+
+.ohje {
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    color: #000; /* Updated color */
+}
+
+.ohje2 {
+    margin-top: 30px;
+}
+
+.ohje2 a {
+    color: #df2070;
+    text-decoration: none;
+}
+
+.logo {
+    width: 100%;
+    align-items: center;
+}
