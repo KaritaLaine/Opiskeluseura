@@ -1,53 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-<!-- extends toistaa base.html:ssä sijaitsevan headerin ja footerin sivulle-->
-{% extends "base.html" %}
-{% block content %}
-{% load static %}
+    <!-- extends toistaa base.html:ssä sijaitsevan headerin ja footerin sivulle-->
+    {% extends "base.html" %}
+    {% block content %}
+    {% load static %}
 
-
-<body>
-    <button class="open-button" onclick="openForm()">Open Form</button>
-    
-    <div class="form-popup" id="myForm">
-      <form action="/action_page.php" class="form-container">
-        <h1>Login</h1>
-    
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-    
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-    
-        <button type="submit" class="btn">Login</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-      </form>
-    </div>
-    <script src="{% static 'popup.js' %}"></script>
-</body>
-
-    <script src="{% static 'popup.js' %}"></script>
-    
-
-
-
-
-    <div class="info">
-        <div class="infoteksti">
-            <h1>Etsitkö opiskeluseuraa?</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Phasellus feugiat lacinia iaculis. Nunc et sollicitudin ipsum. 
-                Donec feugiat tempus euismod. Nulla facilisi. Vestibulum interdum 
-                nulla in quam molestie.
-            </p>
-            <a href="{% url 'kirjaudu' %}"> <p class="linkki"> Tutustu huoneisiin </p> </a>
+        <div class="info">
+            <div class="infoteksti">
+                <h1>Etsitkö opiskeluseuraa?</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Phasellus feugiat lacinia iaculis. Nunc et sollicitudin ipsum. 
+                    Donec feugiat tempus euismod. Nulla facilisi. Vestibulum interdum 
+                    nulla in quam molestie.
+                </p>
+                <button class="linkkiteksti" onclick="openForm()">Tutustu huoneisiin</button>
+            </div>
         </div>
-    </div>
-</body>
-
-
-
-
-{% endblock %}
+    {% endblock %}
 </html>

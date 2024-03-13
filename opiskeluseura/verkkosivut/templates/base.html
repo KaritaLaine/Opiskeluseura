@@ -12,41 +12,62 @@
         <!-- <link rel="shortcut icon" href="{% static 'favicon.svg' %}"/> -->
     </head>    
 
-    <header>
-        <title>{% block title %}Opiskeluseura{% endblock %}</title>
-        <div class="vasen-header">
-            <a href="{% url 'etusivu' %}"> <img class="logo" src="{% static 'Tunnuslogo-rosalila.svg' %}" alt="Opiskeluseuran logo"/>
-        </div>
-        <div class="oikea-header">
-                <li class="right"><a href="{% url 'kirjaudu' %}">Kirjaudu sisään</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
-
-    <!-- Wrapper on vähän niinkuin pussi, jonka sisälle kaikki elementit tulee. 
-        Sen avulla on helppo optimoida esim. sivun kokoa ja muita laajia asetuksia.-->
-    <div class="wrapper">
-        {% block content %} {% endblock content %}
-    </div>
-
-    <!-- Script varten -->
-    {% block scripts %} {% endblock scripts %}
-
-
-<!-- FOOTER -->
-    <footer>
-        <div class="vasen">
-            <a href="{% url 'etusivu' %}"> <img class="footerlogo" src="{% static 'Tunnus-rosa.svg' %}" alt="Opiskeluseuran logo"/>
-        </div>
-
-        <div class="yhteystiedot">
-            <h3>Yhteystiedot</h3>
-            <div class="yt">
-                <p>Lorem ipsum dolor sit amet,
-                    <br> Consectetur adipiscing elit
-                    <br> Phasellus feugiat lacinia iaculis </p>
+    <body>
+        <header>
+            <div class="vasen-header">
+                <a href="{% url 'etusivu' %}">
+                    <img class="logo" src="{% static 'Tunnuslogo-rosalila.svg' %}" alt="Opiskeluseuran logo"/>
+                </a>
             </div>
-        </div>     
-    </footer>
+            <div class="oikea-header">
+                <button class="open-button" onclick="openForm()">Kirjaudu sisään</button>
+            </div>
+        </header>
+
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+
+                <h1>Kirjaudu sisään</h1>
+
+                <label for="email"><b>Sähköposti</b></label>
+                <input type="text" placeholder="Sähköpostiosoite" name="email" required>
+
+                <label for="psw"><b>Salasana</b></label>
+                <input type="password" placeholder="Salasana" name="psw" required>
+
+                <button type="submit" class="btn">Kirjaudu sisään</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Sulje</button>
+                
+            </form>
+        </div>
+
+        <!-- Wrapper on vähän niinkuin pussi, jonka sisälle kaikki elementit tulee. 
+            Sen avulla on helppo optimoida esim. sivun kokoa ja muita laajia asetuksia.-->
+        <div class="wrapper">
+            {% block content %} {% endblock content %}
+        </div>
+
+        <!-- Script varten -->
+        {% block scripts %} {% endblock scripts %}
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="vasen">
+                <a href="{% url 'etusivu' %}">
+                    <img class="footerlogo" src="{% static 'Tunnus-rosa.svg' %}" alt="Opiskeluseuran logo"/>
+                </a>
+            </div>
+
+            <div class="yhteystiedot">
+                <h3>Yhteystiedot</h3>
+                <div class="yt">
+                    <p>Lorem ipsum dolor sit amet,
+                        <br> Consectetur adipiscing elit
+                        <br> Phasellus feugiat lacinia iaculis </p>
+                </div>
+            </div>     
+        </footer>
+
+        <script src="{% static 'popup.js' %}"></script>
+    </body>
 </html>
