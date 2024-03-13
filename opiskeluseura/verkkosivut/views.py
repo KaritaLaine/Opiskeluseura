@@ -6,3 +6,6 @@ def etusivu(request):
 
 def kirjaudu(request):
     return render(request, 'kirjautuminen.html')
+
+def opiskeluhuoneet(request):
+    return render(request, 'opiskeluhuoneet.html')
