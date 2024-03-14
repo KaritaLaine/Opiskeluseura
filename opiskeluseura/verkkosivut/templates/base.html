@@ -12,41 +12,79 @@
        <link rel="shortcut icon" href="{% static 'Tunnus-rosalila.svg' %}"/>
     </head>    
 
-    <header>
-        <title>{% block title %}Opiskeluseura{% endblock %}</title>
-        <div class="vasen-header">
-            <a href="{% url 'etusivu' %}"> <img class="logo" src="{% static 'Tunnuslogo-rosalila.svg' %}" alt="Opiskeluseuran logo"/>
-        </div>
-        <div class="oikea-header">
-                <li class="right"><a href="{% url 'kirjaudu' %}">Kirjaudu sisään</a></li>
-            </ul>
-        </nav>
-        </div>
-    </header>
-
-    <!-- Wrapper on vähän niinkuin pussi, jonka sisälle kaikki elementit tulee. 
-        Sen avulla on helppo optimoida esim. sivun kokoa ja muita laajia asetuksia.-->
-    <div class="wrapper">
-        {% block content %} {% endblock content %}
-    </div>
-
-    <!-- Script varten -->
-    {% block scripts %} {% endblock scripts %}
-
-
-<!-- FOOTER -->
-    <footer>
-        <div class="vasen">
-            <a href="{% url 'etusivu' %}"> <img class="footerlogo" src="{% static 'Tunnus-rosa.svg' %}" alt="Opiskeluseuran logo"/>
-        </div>
-
-        <div class="yhteystiedot">
-            <h3>Yhteystiedot</h3>
-            <div class="yt">
-                <p>Lorem ipsum dolor sit amet,
-                    <br> Consectetur adipiscing elit
-                    <br> Phasellus feugiat lacinia iaculis </p>
+    <!-- HEADER-->
+    <body>
+        <header>
+            <!-- Logo -->
+            <div class="vasen-header">
+                <a href="{% url 'etusivu' %}">
+                    <img class="logo" src="{% static 'Tunnuslogo-rosalila.svg' %}" alt="Opiskeluseuran logo"/>
+                </a>
             </div>
-        </div>     
-    </footer>
+            <!-- Kirjautumis-nappi -->
+            <div class="oikea-header">
+                <button class="open-button" onclick="openForm()">Kirjaudu sisään</button>
+            </div>
+        </header>
+
+        <!-- Kirjautumisnapista avautuva popup-form -->
+        <div class="form-popup" id="myForm">
+            <div class="form-close">
+                <!-- (x)-nappia klikattaessa suoritetaan popup.js closeForm()-funktio -->
+                <span class="close" onclick="closeForm()">&times;</span>
+            </div>
+            <div class="form-logo">
+                <img src="{% static 'Tunnus-rosalila.svg' %}" alt="Logo">
+            </div>
+            <div class="form-container">
+                <!-- Otsikot ja syötekentät -->
+                <h1>Kirjaudu sisään</h1>
+                <div class="form-group">
+                    <label for="email">Sähköposti</label>
+                    <input type="text" placeholder="Sähköpostiosoite" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="psw">Salasana</label>
+                    <input type="password" placeholder="Salasana" name="psw" required>
+                </div>
+                <!-- Kirjaudu sisään nappi, TODO: siirtää onnistuessa huonesivuihin! -->
+                <button type="submit" class="btn">Kirjaudu sisään</button>
+                <!-- Rekisteröitymislinkki -->
+                <p class="no-account">Ei käyttäjää? <a href="#">Rekisteröidy.</a></p>
+            </div>
+        </div>
+        
+        <!-- Linkkaa popup.js:n tiedostoon -->
+        <script src="{% static 'popup.js' %}"></script>
+
+
+        <!-- Wrapper on vähän niinkuin pussi, jonka sisälle kaikki elementit tulee. 
+            Sen avulla on helppo optimoida esim. sivun kokoa ja muita laajia asetuksia.-->
+        <div class="wrapper">
+            <!-- Tähän väliin tulee muiden sivujen sisältö,
+                eli ne ovat headerin ja footerin välissä -->
+            {% block content %} {% endblock content %}
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <!-- Logo -->
+            <div class="vasen">
+                <a href="{% url 'etusivu' %}">
+                    <img class="footerlogo" src="{% static 'Tunnus-rosa.svg' %}" alt="Opiskeluseuran logo"/>
+                </a>
+            </div>
+
+            <!-- Yhteystiedot -->
+            <div class="yhteystiedot">
+                <h3>Yhteystiedot</h3>
+                <div class="yt">
+                    <p>Lorem ipsum dolor sit amet,
+                        <br> Consectetur adipiscing elit
+                        <br> Phasellus feugiat lacinia iaculis </p>
+                </div>
+            </div>     
+        </footer>
+    </body>
 </html>
