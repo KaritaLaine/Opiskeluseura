@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-
     <!-- extends toistaa base.html:ssä sijaitsevan headerin ja footerin sivulle-->
     {% extends "base.html" %}
+    <!-- Tämän "block content" sisälle tulee taas sisältö, joka halutaan headerin ja footerin väliin-->
     {% block content %}
-    {% load static %}
-
+        <!-- Etusivun tekstit -->
         <div class="info">
             <div class="infoteksti">
                 <h1>Etsitkö opiskeluseuraa?</h1>
@@ -14,6 +13,7 @@
                     Donec feugiat tempus euismod. Nulla facilisi. Vestibulum interdum 
                     nulla in quam molestie.
                 </p>
+                <!-- Tutustu huoneisiin -elementti, joka johtaa kirjautumissivulle -->
                 <button class="linkkiteksti" onclick="openForm()">Tutustu huoneisiin</button>
             </div>
         </div>
