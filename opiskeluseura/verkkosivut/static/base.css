@@ -24,6 +24,7 @@ header {
   width: 100%;
   height: 130px;
   box-sizing: border-box;
+  position:sticky;
 }
 
 .vasen-header {
@@ -40,8 +41,8 @@ header {
   padding: 20px 30px;
 }
 
-/* Kirjautumisnappi */
-.open-button {
+/* Kirjautumisnappi, uloskirjautumisnappi */
+.open-button, .logout-btn {
   padding: 16px 20px;
   border: none;
   color: white;
@@ -62,7 +63,7 @@ header {
   right: 20px; 
 }
 
-.open-button:hover {
+.open-button:hover, .logout-btn:hover {
   background-color: #9e658a;
 }
 
@@ -272,7 +273,7 @@ footer h3 {
   z-index: 8;
 }
 
-/* Huoneet */
+/* Opiskeluhuoneet */
 
 .oinfo {
   padding: 20px;
@@ -359,3 +360,8 @@ footer h3 {
  color: white;
 }
 
+.error-message {
+  text-align: left;
+  color:red;
+  font-size: 15px;
+}

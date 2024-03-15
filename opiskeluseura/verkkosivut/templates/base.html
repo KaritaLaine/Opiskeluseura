@@ -3,7 +3,7 @@
     <head>
         <!-- Tarvittavat meta-tägit. Viewport asettaa eri laitteille sopivan skaalauksen -->
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Lataa staattiset tiedostot ja yhdistetään css-tiedostoon -->
         {% load static %}
         {% block css %}{% endblock %}
@@ -33,37 +33,56 @@
             </div>
         </header>
 
+        <!-- Tähän lisätään virheviestit -->
+        {% block messages %}
+        {% if messages %}
+            <ul class="errorlist">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endblock messages %}
+
         <!-- Kirjautumisnapista avautuva popup-form -->
         <div class="form-popup" id="myForm">
-            <form action="{% url 'etusivu' %}" method="post" class="form-container">
+            <form id="loginForm" class="form-container">
                 {% csrf_token %}
                 <div class="form-close">
-                    <!-- (x)-nappia klikattaessa suoritetaan popup.js closeForm()-funktio -->
+                    <!-- Sulje kirjautumispopup klikkaamalla (x)-nappia -->
                     <span class="close" onclick="closeForm()">&times;</span>
                 </div>
                 <div class="form-logo">
+                    <!-- Opiskeluseuran logo -->
                     <img src="{% static 'Tunnus-rosalila.svg' %}" alt="Logo">
                 </div>
                 <!-- Otsikot ja syötekentät -->
                 <h1>Kirjaudu sisään</h1>
                 <div class="form-group">
                     <label for="käyttäjätunnus">Käyttäjätunnus</label>
-                    <input type="text" placeholder="Käyttäjätunnus" name="käyttäjätunnus" required>
+                    <input type="text" placeholder="Käyttäjätunnus" name="käyttäjätunnus" id="käyttäjätunnus" required>
                 </div>
                 <div class="form-group">
                     <label for="salasana">Salasana</label>
-                    <input type="password" placeholder="Salasana" name="salasana" required>
+                    <input type="password" placeholder="Salasana" name="salasana" id="salasana" required>
+                    <!-- Tässä näytetään kirjautumisvirheet -->
+                    <div id="errorMessages" class="error-messages"></div>
                 </div>
-                <!-- Kirjaudu sisään nappi -->
-                <button type="submit" class="btn">Kirjaudu sisään</button>
-                <!-- Rekisteröitymislinkki -->
+                <!-- Kirjaudu sisään -nappi -->
+                <button type="button" id="loginButton" class="btn">Kirjaudu sisään</button>
+                <!-- Linkki rekisteröitymissivulle -->
                 <p class="no-account">Ei käyttäjää? <a href="#">Rekisteröidy.</a></p>
             </form>
         </div>
-        
-        <!-- Linkkaa popup.js:n tiedostoon -->
-        <script src="{% static 'popup.js' %}"></script>
 
+        <!-- Määritä etusivun URL JavaScriptissä -->
+        <script>
+            const etusivuUrl = "{% url 'etusivu' %}";
+        </script>
+        
+        <!-- Linkitetään ulkoiset JavaScript tiedostot -->
+        <script src="{% static 'popup.js' %}"></script>
+        <script src="{% static 'kirjautuminen.js' %}"></script>
 
         <!-- Wrapper on vähän niinkuin pussi, jonka sisälle kaikki elementit tulee. 
             Sen avulla on helppo optimoida esim. sivun kokoa ja muita laajia asetuksia.-->
@@ -78,6 +97,7 @@
         <footer>
             <!-- Logo -->
             <div class="vasen">
+                <!-- Linkki etusivulle logoa klikattaessa -->
                 <a href="{% url 'etusivu' %}">
                     <img class="footerlogo" src="{% static 'Tunnus-rosa.svg' %}" alt="Opiskeluseuran logo"/>
                 </a>
