@@ -10,75 +10,77 @@
     <title>Opiskeluhuoneet</title>
 </head>
 
-<body>
-    <div class="oinfo">
-        <div class="huoneet">
-            <h1>Huoneet</h1>
-            <h2>Kielet</h2>
-    </div>
-    <div class = "kortit">
-        <div class = "lainauskortti">
-            <img src="{% static 'sweden.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Ruotsi </h2>
-            </div>
-        </div>
+<!-- CONTENT -->
 
-        <div class = "lainauskortti">
-            <img src="{% static 'finnish.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Suomi </h2>
+    <!-- Opiskeluhuoneet ja chat-sivupalkki -->
+    <div class="content">
+        <!-- Opiskeluhuoneet vasemmalla -->
+        <div class="vasen-sivupalkki">
+            <div class="dropdown">
+                <button class="dropbtn">Matemaattiset</button>
+                <div class="dropdown-content">
+                    <a href="#">Calculus</a>
+                    <a href="#">Johdanto</a>
+                    <a href="#">MATLAB</a>
+                    <a href="#">Soveltava matikka</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Kielet</button>
+                <div class="dropdown-content">
+                    <a href="#">Suomi</a>
+                    <a href="#">Ruotsi</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Koodaus</button>
+                <div class="dropdown-content">
+                    <a href="#">Python</a>
+                    <a href="#">JavaScript</a>
+                    <a href="#">Rust</a>
+                    <a href="#">C#</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Fysiikka</button>
+                <div class="dropdown-content">
+                    <a href="#">Perusteet</a>
+                  
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Labrat</button>
+                <div class="dropdown-content">
+                    <a href="#">Elektroniikka</a>
+                    <a href="#">Fysikaaliset mittaukset</a>
+                    <a href="#">TVTT</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
             </div>
         </div>
+            <div class="oikea-sivupalkki">
+                <!-- Chat-ikkuna -->
+                <div class="chat">
+                    <!-- Chat-viestit -->
+                    <div class="chat-messages">
+                        <!-- Tähän tulevat viestit -->
+                    </div>
+                    <!-- Chat-lomake -->
+                    <form id="chat-form">
+                        <input type="text" id="message" placeholder="Kirjoita viesti...">
+                        <button type="submit">Lähetä</button>
+                    </form>
+                </div>
+            </div>
+            
+            <script src="{% static 'dropdown.js' %}"></script>
 
-        <div class = "lainauskortti">
-            <img src="{% static 'python.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Python </h2>
-            </div>
-        </div>
 
-        <div class = "lainauskortti">
-            <img src="{% static 'sweden.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Ruotsi </h2>
-            </div>
-        </div>
+ <!-- Linkitetään ulkoiset JavaScript tiedostot -->
 
-        <div class = "lainauskortti">
-            <img src="{% static 'finnish.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Suomi </h2>
-            </div>
-        </div>
-    </div>
-    
-    <div class="huoneet">
-        <h3>Matemaattiset</h3>
-    </div>
-
-    <div class = "kortit">
-        <div class = "lainauskortti">
-            <img src="{% static 'sweden.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Ruotsi </h2>
-            </div>
-        </div>
-
-        <div class = "lainauskortti">
-            <img src="{% static 'finnish.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Suomi </h2>
-            </div>
-        </div>
-
-        <div class = "lainauskortti">
-            <img src="{% static 'python.jpg' %}"/>
-            <div class = "tekstitausta">
-                <h2 class="valiotsikko k-otsikko"> Python </h2>
-            </div>
-        </div>
-        </div>
-</body>
 {% endblock %}
 </html>
