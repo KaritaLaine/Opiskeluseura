@@ -1,0 +1,206 @@
+/* Opiskeluhuoneet */
+
+.oinfo {
+    padding: 20px;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+  .huoneet h1 {
+    font-size: 40px;
+    color:#000000;
+    padding-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .huoneet h2 {
+    font-size: 30px;
+    color:#000000;
+    padding-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .huoneet h3 {
+    font-size: 30px;
+    color:#000000;
+    padding-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  .kortit {
+    width: 100%;
+    justify-content: left;
+    gap: 20px;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+  }   
+  
+  .lainauskortti {
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction:column;
+    justify-content: 5px;
+    padding-left: 20px;
+  }
+  
+  .lainauskortti img {
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .lainauskortti:nth-child(odd) {
+    background-color: transparent
+  }
+  
+  .lainauskortti:nth-child(even) {
+    background-color: transparent
+  }
+  
+  .k-otsikko {
+    font-size: 20px;
+    color: black;
+    font-style: bold;
+  }
+  
+  
+  .lainauskortti p {
+    width: 210px;
+    margin: 0 auto;
+  }
+  
+  .tekstitausta {
+    background-color: #383355;
+    font-size: 15px;
+    text-align: center;
+    padding: 0px;
+    width: 200px;
+    margin: 0 auto;
+    opacity: 0.7;
+  }
+  .tekstitausta h2 {
+   color: white;
+  }
+  
+  .error-message {
+    text-align: left;
+    color:red;
+    font-size: 15px;
+  }
+  
+  .content {
+  display: flex;
+  align-items: flex-start;
+  }
+  
+  
+  /* Vasen sivupalkki */
+  /* Vasen sivupalkki */
+  .vasen-sivupalkki {
+    padding: 20px;
+    color: white;
+    width: 250px;
+    min-height: calc(100vh - 130px);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown {
+    margin-bottom: 15px;
+  }
+  
+  .dropbtn {
+    background-color: #b07c9e;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .dropdown-content {
+    display: none; /* Hide dropdown content by default */
+  }
+  
+  .dropdown.active .dropdown-content {
+    display: block; /* Show dropdown content when dropdown is active */
+  }
+  
+  .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #8b5679;
+  }
+  
+  
+  /* Oikea sivupalkki */
+  .oikea-sivupalkki {
+    width: 1200px;
+    display: flex; /* Käytetään flexboxia */
+    flex-direction: column;
+    align-items: flex-start; /* Asetetaan alkamaan samalta korkeudelta kuin vasen sivupalkki */
+  }
+  .chat {
+    background-color: #f2f2f2;
+    height: 500px;
+    width: 100%;
+    padding: 30px;
+    overflow-y: hidden;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .chat-messages {
+    height: calc(100% - 60px); /* Vähennetään chat-lomakkeen korkeus */
+    overflow-y: auto;
+  }
+  
+  #chat-form {
+    width: 100%;
+    margin-top: auto; /* Siirretään lomake alareunaan */
+    overflow: auto; /* Näytetään vierityspalkit tarvittaessa */
+  }
+  
+  #message {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #message:focus {
+    outline: none;
+  }
+  
+  #chat-form button {
+    width: 60px;
+    padding: 10px;
+    background-color: #b07c9e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #chat-form button:hover {
+    background-color: #9e658a;
+  }
+  
+  .logout-btn {
+    text-decoration: none;
+    width: 120px;
+    height: 15px;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  

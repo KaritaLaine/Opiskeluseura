@@ -7,8 +7,82 @@
 {% load static %}
 
 <head>
+    <link rel="stylesheet" href="{% static 'huoneet.css'%}"> 
     <title>Opiskeluhuoneet</title>
 </head>
+
+<!-- CONTENT -->
+
+    <!-- Opiskeluhuoneet ja chat-sivupalkki -->
+    <div class="content">
+        <!-- Opiskeluhuoneet vasemmalla -->
+        <div class="vasen-sivupalkki">
+            <div class="dropdown">
+                <button class="dropbtn">Matemaattiset</button>
+                <div class="dropdown-content">
+                    <a href="#">Calculus</a>
+                    <a href="#">Johdanto</a>
+                    <a href="#">MATLAB</a>
+                    <a href="#">Soveltava matikka</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Kielet</button>
+                <div class="dropdown-content">
+                    <a href="#">Suomi</a>
+                    <a href="#">Ruotsi</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Koodaus</button>
+                <div class="dropdown-content">
+                    <a href="#">Python</a>
+                    <a href="#">JavaScript</a>
+                    <a href="#">Rust</a>
+                    <a href="#">C#</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Fysiikka</button>
+                <div class="dropdown-content">
+                    <a href="#">Perusteet</a>
+                  
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Labrat</button>
+                <div class="dropdown-content">
+                    <a href="#">Elektroniikka</a>
+                    <a href="#">Fysikaaliset mittaukset</a>
+                    <a href="#">TVTT</a>
+                    <!-- Lisää muita huoneita tarvittaessa -->
+                </div>
+            </div>
+        </div>
+            <div class="oikea-sivupalkki">
+                <!-- Chat-ikkuna -->
+                <div class="chat">
+                    <!-- Chat-viestit -->
+                    <div class="chat-messages">
+                        <!-- Tähän tulevat viestit -->
+                    </div>
+                    <!-- Chat-lomake -->
+                    <form id="chat-form">
+                        <input type="text" id="message" placeholder="Kirjoita viesti...">
+                        <button type="submit">Lähetä</button>
+                    </form>
+                </div>
+            </div>
+            
+            <script src="{% static 'dropdown.js' %}"></script>
+
+
+ <!-- Linkitetään ulkoiset JavaScript tiedostot -->
+
 
 {% endblock %}
 </html>
