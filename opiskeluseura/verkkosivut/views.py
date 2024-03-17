@@ -54,6 +54,7 @@ def uloskirjautuminen(request):
     return redirect('etusivu')
 
 # Rekisteröityminen
+# Rekisteröityminen
 def rekisterointi(request):
     # Tarkistetaan, onko lomake lähetetty oikein
     if request.method == 'POST':
@@ -61,6 +62,7 @@ def rekisterointi(request):
         # Tarkistetaan, onko lomakkeen syötekentät täytetty oikein. Jos on,
         # rekisteröinti onnistuu ja käyttäjä ohjataan etusivulle
         if form.is_valid():
+            user = form.save()
             # Etusivulle tulee popup-viesti rekisteröinnin onnistumisesta
             messages.success(request, 'Rekisteröinti onnistui. Voit nyt kirjautua sisään.')
             return redirect('etusivu')

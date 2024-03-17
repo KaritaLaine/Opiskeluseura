@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Tarvittavat meta-tägit. Viewport asettaa eri laitteille sopivan skaalauksen -->
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Sivun otsikko ja CSS-tiedosto -->
         <title>Rekisteröidy</title>
         {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'rekisterointi.css'%}">
+        <!-- Opiskeluseuran favicon -->
+        <link rel="shortcut icon" href="{% static 'Tunnus-rosalila.svg' %}"/>
     </head>
+
     <body>
+        <!-- Rekisteröinti form -->
         <div class="rekisterointi">
+            <div class="form-close">
+                <!-- Sulje kirjautumispopup klikkaamalla (x)-nappia -->
+                <a href="{%url 'etusivu'%}"><span class="close">&times;</span></a>
+            </div>
+            <div class="r-logo">
+                <!-- Opiskeluseuran logo -->
+                <a href="{%url 'etusivu'%}"><img src="{% static 'Tunnus-rosalila.svg' %}" alt="Logo"></a>
+            </div>
             <h1>Rekisteröidy</h1>
-            <form method="post">
+            <form method="post" class="form-sisalto">
                 {% csrf_token %}
-                <!-- Tulostetaan rekisteröidy-lomake hyödyntäen 
-                    Django-lomaketta -->
-                {{ form.as_p }}
+                <!-- Otsikot ja syötekentät -->
+                <div class="form-group">
+                    <label for="id_username">Käyttäjätunnus</label>
+                    {{ form.username}}
+                </div>
+                <div class="form-group">
+                    <label for="id_password1">Salasana</label>
+                    {{ form.password1}}
+                </div>
+                <div class="form-group">
+                    <label for="id_password2">Salasana uudelleen</label>
+                    {{ form.password2}} 
+                </div>
+                <!-- Virheilmoitus, jos lomake ei ole täytetty oikein -->
+                {% if form.errors %}
+                    <div class="errorlist">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <button type="submit">Rekisteröidy</button>
             </form>
+            <p class="onkayttis">Onko sinulla jo käyttäjätunnukset? <BR> <a href={%url 'etusivu'%}>Kirjaudu sisään.</a></p>
         </div>
     </body>
 </html>

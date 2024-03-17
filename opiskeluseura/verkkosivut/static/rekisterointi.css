@@ -1,39 +1,82 @@
 /* Rekisteröinnin lomake */
+
+html {
+    background: rgb(67,64,117);
+    background: linear-gradient(90deg, rgba(67,64,117,1) 0%, rgba(55,43,82,1) 0%, rgba(101,69,136,1) 49%, rgba(56,51,85,1) 100%);
+    font-family: Arial, sans-serif;
+}
+
 .rekisterointi {
-    max-width: 310px;
-    margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
     padding: 20px;
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
+    max-width: 450px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    z-index: 9;
+    min-height: 600px;
+}
   
-  form h1 {
+.form-sisalto {
+    max-width: 310px;
+    margin: auto;
+}
+
+.rekisterointi h1 {
     text-align: center;
     color: #383355;
     margin-bottom: 20px;
-  }
-  
-  .form-group {
+}
+
+/* LOGO */ 
+
+.r-logo {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.r-logo img {
+    height: 100px;
+}
+
+/* OTSIKKO */
+
+form h1 {
+    text-align: center;
+    color: #383355;
+    margin-bottom: 20px;
+}
+
+/* FIELDIT */
+
+.form-group {
     margin-bottom: 15px;
-  }
+}
   
-  .form-group label {
+label {
     display: block;
     color: #383355;
     margin-bottom: 5px;
     font-weight: bold;
-  }
+    font-size:16px;
+}
   
-  .form-group input[type="text"],
-  .form-group input[type="password"] {
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  button[type="submit"] {
+}
+
+/* NAPPI */
+
+button[type="submit"] {
     background-color: #b07c9e;
     color: white;
     border: none;
@@ -43,27 +86,61 @@
     padding: 12px;
     font-size: 16px;
     margin-bottom: 10px;
-  }
+}
   
-  button[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: #9e658a;
-  }
-  
-  .no-account {
+}
+
+input {
+    width: 288px !important;
+}
+
+/* ON KÄYTTÄJÄ */
+
+.onkayttis {
     text-align: center;
     margin-top: 15px;
     color: #383355;
     font-size: 14px;
-    margin-bottom: 45px;
-  }
+}
   
-  .no-account a {
-    color: #9e658a;
+.onkayttis a {
+    color: #b07c9e;
     text-decoration: none;
     font-weight: bold;
+}
+  
+.onkayttis a:hover {
+    color:#9e658a;
+}
+
+/* ERRORIT */
+
+.errorlist {
+    text-align: left;
+    color:red;
+    font-size: 15px;
+    list-style: none;
+}
+
+/* (X) */
+  
+  .form-close {
+    text-align: right;
   }
   
-  .no-account a:hover {
-    text-decoration: underline;
+  .close:hover {
+    color: #9e658a;
+  }
+  
+  .form-close a {
+    text-align: right;
+    color: #b07c9e;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 10px;
   }
   

@@ -35,15 +35,15 @@
 
         <!-- Kirjautumisnapista avautuva popup-form -->
         <div class="form-popup" id="myForm">
+            <div class="form-close">
+                <!-- Sulje kirjautumispopup klikkaamalla (x)-nappia -->
+                <span class="close" onclick="closeForm()">&times;</span>
+            </div>
             <form id="loginForm" class="form-container">
                 {% csrf_token %}
-                <div class="form-close">
-                    <!-- Sulje kirjautumispopup klikkaamalla (x)-nappia -->
-                    <span class="close" onclick="closeForm()">&times;</span>
-                </div>
                 <div class="form-logo">
                     <!-- Opiskeluseuran logo -->
-                    <img src="{% static 'Tunnus-rosalila.svg' %}" alt="Logo">
+                    <a href="{%url 'etusivu'%}"><img src="{% static 'Tunnus-rosalila.svg' %}" alt="Logo"></a>
                 </div>
                 <!-- Otsikot ja syötekentät -->
                 <h1>Kirjaudu sisään</h1>
