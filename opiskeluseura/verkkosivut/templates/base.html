@@ -25,7 +25,7 @@
             <div class="oikea-header">
                 <!-- Jos käyttäjä on kirjautunut sisään, näytetään kirjaudu ulos nappi-->
                 {% if user.is_authenticated %}
-                    <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Logout</a>
+                    <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Kirjaudu ulos</a>
                 <!-- Muuten näytetään kirjaudu sisään nappi-->
                 {% else %}
                     <button class="open-button" onclick="openForm()">Kirjaudu sisään</button>
@@ -33,28 +33,17 @@
             </div>
         </header>
 
-        <!-- Tähän lisätään virheviestit -->
-        {% block messages %}
-        {% if messages %}
-            <ul class="errorlist">
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        {% endblock messages %}
-
         <!-- Kirjautumisnapista avautuva popup-form -->
         <div class="form-popup" id="myForm">
+            <div class="form-close">
+                <!-- Sulje kirjautumispopup klikkaamalla (x)-nappia -->
+                <span class="close" onclick="closeForm()">&times;</span>
+            </div>
             <form id="loginForm" class="form-container">
                 {% csrf_token %}
-                <div class="form-close">
-                    <!-- Sulje kirjautumispopup klikkaamalla (x)-nappia -->
-                    <span class="close" onclick="closeForm()">&times;</span>
-                </div>
                 <div class="form-logo">
                     <!-- Opiskeluseuran logo -->
-                    <img src="{% static 'Tunnus-rosalila.svg' %}" alt="Logo">
+                    <a href="{%url 'etusivu'%}"><img src="{% static 'Tunnus-rosalila.svg' %}" alt="Logo"></a>
                 </div>
                 <!-- Otsikot ja syötekentät -->
                 <h1>Kirjaudu sisään</h1>
@@ -71,7 +60,7 @@
                 <!-- Kirjaudu sisään -nappi -->
                 <button type="button" id="loginButton" class="btn">Kirjaudu sisään</button>
                 <!-- Linkki rekisteröitymissivulle -->
-                <p class="no-account">Ei käyttäjää? <a href="#">Rekisteröidy.</a></p>
+                <p class="no-account">Ei käyttäjää? <a href="rekisterointi">Rekisteröidy.</a></p>
             </form>
         </div>
 

@@ -16,3 +16,17 @@ function closeForm() {
         backdrop.parentNode.removeChild(backdrop);
     }
 }
+
+// Näytä rekisteröinti onnistui -popup, kun sivu latautuu
+// rekisteröinnin onnistuttua
+function closePopup() {
+    var popup = document.querySelector('.popup');
+    popup.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.querySelector('.popup');
+    if (popup) {
+        popup.style.display = 'block';
+    }
+});

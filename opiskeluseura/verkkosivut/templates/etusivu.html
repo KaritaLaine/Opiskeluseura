@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <!-- extends toistaa base.html:ssä sijaitsevan headerin ja footerin sivulle-->
+    <!-- Extends toistaa base.html:ssä sijaitsevan headerin ja footerin sivulle -->
     {% extends "base.html" %}
     <!-- Tämän "block content" sisälle tulee taas sisältö, joka halutaan headerin ja footerin väliin-->
     {% block content %}
@@ -12,6 +12,18 @@
         <!-- Etusivun tekstit -->
         <div class="info">
             <div class="infoteksti">
+                <!-- Rekisteröitymisviesti -->
+                {% if messages %}
+                    <div class="popup">
+                        <div class="popup-content">
+                            <span class="close-popup" onclick="closePopup()">&times;</span>
+                            {% for message in messages %}
+                            <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+                
                 <h1>Etsitkö opiskeluseuraa?</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Phasellus feugiat lacinia iaculis. Nunc et sollicitudin ipsum. 
@@ -19,7 +31,11 @@
                     nulla in quam molestie.
                 </p>
                 <!-- Tutustu huoneisiin -elementti, joka johtaa kirjautumissivulle -->
-                <button class="linkkiteksti" onclick="openForm()">Tutustu huoneisiin</button>
+                {% if user.is_authenticated %}
+                    <a href="{%url 'opiskeluhuoneet'%}"><button class="linkkiteksti">Tutustu huoneisiin</button></a>
+                {% else %}
+                    <button class="linkkiteksti" onclick="openForm()">Tutustu huoneisiin</button>
+                {% endif %}
             </div>
         </div>
     {% endblock %}
