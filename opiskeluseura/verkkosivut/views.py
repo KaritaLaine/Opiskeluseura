@@ -5,6 +5,7 @@ from django.contrib import messages
 # Djangon autentikaatiot sisään- ja uloskirjautumiseen
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
+from .forms import rekisterointiForm
 
 # Etusivu ja kirjautumisominaisuus
 def etusivu(request):
@@ -52,5 +53,22 @@ def uloskirjautuminen(request):
     # Uudelleen ohjataan käyttäjä etusivulle
     return redirect('etusivu')
 
+# Rekisteröityminen
+def rekisterointi(request):
+    # Tarkistetaan, onko lomake lähetetty oikein
+    if request.method == 'POST':
+        form = rekisterointiForm(request.POST)
+        # Tarkistetaan, onko lomakkeen syötekentät täytetty oikein. Jos on,
+        # rekisteröinti onnistuu ja käyttäjä ohjataan etusivulle
+        if form.is_valid():
+            # Etusivulle tulee popup-viesti rekisteröinnin onnistumisesta
+            messages.success(request, 'Rekisteröinti onnistui. Voit nyt kirjautua sisään.')
+            return redirect('etusivu')
+    # Jos lomaketta ei ole lähetetty oikein, palautetaan tyhjä lomake
+    else:
+        form = rekisterointiForm()
+    return render(request, 'rekisterointi.html', {'form': form})
+
+# Opiskeluhuoneet
 def opiskeluhuoneet(request):
     return render(request, 'opiskeluhuoneet.html')

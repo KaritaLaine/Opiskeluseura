@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rekisteröidy</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'rekisterointi.css'%}">
+    </head>
+    <body>
+        <div class="rekisterointi">
+            <h1>Rekisteröidy</h1>
+            <form method="post">
+                {% csrf_token %}
+                <!-- Tulostetaan rekisteröidy-lomake hyödyntäen 
+                    Django-lomaketta -->
+                {{ form.as_p }}
+                <button type="submit">Rekisteröidy</button>
+            </form>
+        </div>
+    </body>
+</html>
