@@ -7,4 +7,13 @@ document.querySelectorAll('.dropbtn').forEach(item => {
             dropdownContent.style.display = 'block';
         }
     });
+});// JavaScript code to toggle the "active" class on the dropdown when the button is clicked
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(function(dropdown) {
+        dropdown.addEventListener('click', function() {
+            dropdown.classList.toggle('active');
+        });
+    });
 });
