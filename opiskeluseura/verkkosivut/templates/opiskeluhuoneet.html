@@ -2,7 +2,6 @@
 <html>
 
 <!-- extends toistaa base.html:ssä sijaitsevan headerin ja footerin sivulle-->
-{% extends "base.html" %}
 {% block content %}
 {% load static %}
 
@@ -10,13 +9,16 @@
     <link rel="stylesheet" href="{% static 'huoneet.css'%}"> 
     <title>Opiskeluhuoneet</title>
 </head>
-
+<body>
 <!-- CONTENT -->
 
     <!-- Opiskeluhuoneet ja chat-sivupalkki -->
     <div class="content">
         <!-- Opiskeluhuoneet vasemmalla -->
         <div class="vasen-sivupalkki">
+            <div class="logo">  
+                <a href="{%url 'etusivu'%}"><img src="{% static 'Tunnuslogo-rosalila.svg' %}" alt="Logo"></a>
+            </div>
             <div class="dropdown">
                 <button class="dropbtn">Matemaattiset</button>
                 <div class="dropdown-content">
@@ -63,25 +65,47 @@
                 </div>
             </div>
         </div>
-            <div class="oikea-sivupalkki">
-                <!-- Chat-ikkuna -->
-                <div class="chat">
-               
-                    <!-- Chat-viestit -->
-                    <div class="chat-messages">
-                        <!-- Tähän tulevat viestit -->
-                    </div>
-                    <!-- Chat-lomake -->
-                    <form id="chat-form">
-                        <input type="text" id="message" placeholder="Kirjoita viesti...">
-                        <button type="submit">&#x2B9E</button>
+        <div class="keskipalkki">
+            <div class="otsikko">
+                <h1>Matikka</h1>
+            </div>
+            <!-- Chat-ikkuna -->
+            <div class="chat">
+            
+                <!-- Chat-viestit -->
+                <div class="chat-messages">
+                    <!-- Tähän tulevat viestit -->
+                </div>
+                <!-- Chat-lomake -->
+                <form id="chat-form">
+                    <input type="text" id="message" placeholder="Kirjoita viesti...">
+                    <button type="submit">&#x2B9E</button>
                     </form>
                 </div>
             </div>
+            <div class="oikea-sivupalkki">
+                <div class="menu">
+                    <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Kirjaudu ulos</a>
+                </div>
+                <div class="info">
+                    <h1>Matikka</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum nulla ac enim mollis, eget sagittis odio interdum. 
+                        Aliquam ultricies sed sapien nec porta. Sed pretium arcu vel elit vestibulum malesuada.
+                         Praesent pulvinar, mauris sit amet vehicula auctor, nibh ipsum tempus libero, nec placerat metus metus sit amet nulla.
+                          Donec eu iaculis risus, eget tincidunt sapien. Ut tincidunt mauris eu felis hendrerit pretium.
+                           Donec eu neque vitae augue ultrices molestie. Aliquam porttitor massa a erat laoreet, ut blandit lectus egestas.
+                            Sed luctus mollis odio, sed pharetra urna. Phasellus suscipit porttitor nisi, vitae laoreet augue blandit quis.
+                             Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                              Proin nec purus faucibus, condimentum tellus sed, ultricies sem. Phasellus molestie est non turpis faucibus varius.
+                               Integer nisl purus, luctus eget turpis at, sodales placerat ex.
+                                Integer varius dolor vitae magna vulputate, id venenatis sapien ultricies.
+                                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                </div>          
+        </div>
     </div>    
             <script src="{% static 'dropdown.js' %}"></script>
 
-
+</body>
  <!-- Linkitetään ulkoiset JavaScript tiedostot -->
 
 
