@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html>
-
-<!-- extends toistaa base.html:ssä sijaitsevan headerin ja footerin sivulle-->
-{% block content %}
-{% load static %}
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="{% static 'huoneet.css'%}"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opiskeluhuoneet</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'huoneet.css' %}">
+    <link rel="shortcut icon" href="{% static 'Tunnus-rosalila.svg' %}"/>
 </head>
-<body>
-<!-- CONTENT -->
 
-    <!-- Opiskeluhuoneet ja chat-sivupalkki -->
+<body>
+    <!-- Content -->
     <div class="content">
-        <!-- Opiskeluhuoneet vasemmalla -->
+        <!-- Left Sidebar -->
         <div class="vasen-sivupalkki">
-            <div class="logo">  
-                <a href="{%url 'etusivu'%}"><img src="{% static 'Tunnuslogo-rosalila.svg' %}" alt="Logo"></a>
+            <div class="logo">
+                <a href="{% url 'etusivu' %}">
+                    <img src="{% static 'Tunnuslogo-rosa.svg' %}" alt="Logo">
+                </a>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Matemaattiset</button>
@@ -26,7 +27,6 @@
                     <a href="#">Johdanto</a>
                     <a href="#">MATLAB</a>
                     <a href="#">Soveltava matikka</a>
-                    <!-- Lisää muita huoneita tarvittaessa -->
                 </div>
             </div>
             <div class="dropdown">
@@ -34,7 +34,6 @@
                 <div class="dropdown-content">
                     <a href="#">Suomi</a>
                     <a href="#">Ruotsi</a>
-                    <!-- Lisää muita huoneita tarvittaessa -->
                 </div>
             </div>
             <div class="dropdown">
@@ -44,15 +43,12 @@
                     <a href="#">JavaScript</a>
                     <a href="#">Rust</a>
                     <a href="#">C#</a>
-                    <!-- Lisää muita huoneita tarvittaessa -->
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Fysiikka</button>
                 <div class="dropdown-content">
                     <a href="#">Perusteet</a>
-                  
-                    <!-- Lisää muita huoneita tarvittaessa -->
                 </div>
             </div>
             <div class="dropdown">
@@ -61,53 +57,43 @@
                     <a href="#">Elektroniikka</a>
                     <a href="#">Fysikaaliset mittaukset</a>
                     <a href="#">TVTT</a>
-                    <!-- Lisää muita huoneita tarvittaessa -->
                 </div>
             </div>
         </div>
+        <!-- Center Column -->
         <div class="keskipalkki">
             <div class="otsikko">
-                <h1>Matikka</h1>
+                <h1>Opiskeluhuone</h1>
             </div>
-            <!-- Chat-ikkuna -->
+            <!-- Chat Window -->
             <div class="chat">
-            
-                <!-- Chat-viestit -->
+                <!-- Chat Messages -->
                 <div class="chat-messages">
-                    <!-- Tähän tulevat viestit -->
+                    <!-- Messages will appear here -->
                 </div>
-                <!-- Chat-lomake -->
+                <!-- Chat Form -->
                 <form id="chat-form">
                     <input type="text" id="message" placeholder="Kirjoita viesti...">
                     <button type="submit">&#x2B9E</button>
-                    </form>
-                </div>
+                </form>
             </div>
-            <div class="oikea-sivupalkki">
-                <div class="menu">
-                    <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Kirjaudu ulos</a>
-                </div>
-                <div class="info">
-                    <h1>Matikka</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum nulla ac enim mollis, eget sagittis odio interdum. 
-                        Aliquam ultricies sed sapien nec porta. Sed pretium arcu vel elit vestibulum malesuada.
-                         Praesent pulvinar, mauris sit amet vehicula auctor, nibh ipsum tempus libero, nec placerat metus metus sit amet nulla.
-                          Donec eu iaculis risus, eget tincidunt sapien. Ut tincidunt mauris eu felis hendrerit pretium.
-                           Donec eu neque vitae augue ultrices molestie. Aliquam porttitor massa a erat laoreet, ut blandit lectus egestas.
-                            Sed luctus mollis odio, sed pharetra urna. Phasellus suscipit porttitor nisi, vitae laoreet augue blandit quis.
-                             Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                              Proin nec purus faucibus, condimentum tellus sed, ultricies sem. Phasellus molestie est non turpis faucibus varius.
-                               Integer nisl purus, luctus eget turpis at, sodales placerat ex.
-                                Integer varius dolor vitae magna vulputate, id venenatis sapien ultricies.
-                                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                </div>          
         </div>
-    </div>    
-            <script src="{% static 'dropdown.js' %}"></script>
-
+        <!-- Right Sidebar -->
+        <div class="oikea-sivupalkki">
+            <div class="menu">
+                <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Kirjaudu ulos</a>
+            </div>
+            <div class="info">
+                <h2>Tervetuloa!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum nulla ac enim mollis, eget sagittis odio interdum.
+                    Aliquam ultricies sed sapien nec porta. Sed pretium arcu vel elit vestibulum malesuada.</p>
+                <p>Praesent pulvinar, mauris sit amet vehicula auctor, nibh ipsum tempus libero, nec placerat metus metus sit amet nulla.</p>
+                <p>Donec eu iaculis risus, eget tincidunt. Ut tincidunt mauris eu felis.   </p>
+            </div>
+        </div>
+    </div>
+    <!-- External JS Files -->
+    <script src="{% static 'dropdown.js' %}"></script>
 </body>
- <!-- Linkitetään ulkoiset JavaScript tiedostot -->
 
-
-{% endblock %}
 </html>
