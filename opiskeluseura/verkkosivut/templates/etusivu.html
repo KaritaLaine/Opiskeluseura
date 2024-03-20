@@ -24,17 +24,19 @@
                     </div>
                 {% endif %}
                 
-                <h1>Etsitkö opiskeluseuraa?</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Phasellus feugiat lacinia iaculis. Nunc et sollicitudin ipsum. 
-                    Donec feugiat tempus euismod. Nulla facilisi. Vestibulum interdum 
-                    nulla in quam molestie.
+                <h1>Etsitkö opiskeluseuraa? </h1>
+                <p>
+                    OpiskeluSeura on Turun ammattikorkeakoulun opiskelijoille <br>
+                    tarkoitettu etäyhteydellä tapahtuvaan yhdessä opiskeluun suunniteltu <br> 
+                    sivusto. Rekisteröidy, kirjaudu ja yhdessä opiskelu voi alkaa.
                 </p>
                 <!-- Tutustu huoneisiin -elementti, joka johtaa kirjautumissivulle -->
                 {% if user.is_authenticated %}
-                    <a href="{%url 'opiskeluhuoneet'%}"><button class="linkkiteksti">Tutustu huoneisiin</button></a>
+                    <a href="{%url 'opiskeluhuoneet'%}"><button class="linkkiteksti">Opiskeluhuoneisiin pääset tutustumaan <br>
+                        kirjautumisen jälkeen.</button></a>
                 {% else %}
-                    <button class="linkkiteksti" onclick="openForm()">Tutustu huoneisiin</button>
+                    <button class="linkkiteksti" onclick="openForm()">Opiskeluhuoneisiin pääset tutustumaan <br>
+                        kirjautumisen jälkeen.</button>
                 {% endif %}
             </div>
         </div>

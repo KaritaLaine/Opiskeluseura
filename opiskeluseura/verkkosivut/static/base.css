@@ -98,24 +98,29 @@ footer h3 {
 
 
 /* ETUSIVU */
+/* Container for the main content */
 .info {
   padding: 20px;
-  padding-top: 10px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column; /* Adjusted for better layout */
+  align-items: center;
+  text-align: center;
 }
 
+/* Style for the main text content */
 .infoteksti {
-  max-width: 1040px;
-  font-size: 19.5px;
-  padding-right: 40px;
-  margin-top: 50px;
-  text-align:center;
+  max-width: 750px;
+  margin-top: 30px;
+  align-items: center;
+  text-align: center;
 }
 
+/* Paragraph styles within .infoteksti */
 .infoteksti p {
-  width: 700px;
+  font-size: 23px;
+  line-height: 1.4; /* Improved readability */
+  text-align: center;
 }
 
 .linkkiteksti {
@@ -123,18 +128,20 @@ footer h3 {
   background-color: transparent;
   color:#9e658a;
   text-align: center; 
-  font-size: 25px;
+  font-size: 23px;
   cursor:pointer;
-  padding: 10px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
+/* Hover effect for the link button */
 .linkkiteksti:hover {
-  cursor:pointer;
-  color:#8b5679;
+  color:#8f587c;
 }
 
 .infoteksti h1 {
-  font-size: 60px;
+  font-size: 50px;
   color:#383355;
   padding-bottom: 10px;
   text-align: center;
