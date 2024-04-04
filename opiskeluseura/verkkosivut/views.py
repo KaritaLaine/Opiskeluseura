@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from .forms import rekisterointiForm
-
+    
 # Etusivu ja kirjautumisominaisuus
 def etusivu(request):
     """
@@ -54,7 +54,6 @@ def uloskirjautuminen(request):
     return redirect('etusivu')
 
 # Rekisteröityminen
-# Rekisteröityminen
 def rekisterointi(request):
     # Tarkistetaan, onko lomake lähetetty oikein
     if request.method == 'POST':
@@ -73,4 +72,13 @@ def rekisterointi(request):
 
 # Opiskeluhuoneet
 def opiskeluhuoneet(request):
-    return render(request, 'opiskeluhuoneet.html')
+    # Jos käyttäjä on kirjautunut, hänet ohjataan opiskeluhuoneet-sivulle
+    if request.user.is_authenticated:
+        return render(request, 'opiskeluhuoneet.html')
+    # Muuten hänet ohjataan 403 sivulle.
+    else:
+        return redirect('403')
+    
+# 403-viesti
+def ei_paasya(request):
+    return render(request, '403.html')

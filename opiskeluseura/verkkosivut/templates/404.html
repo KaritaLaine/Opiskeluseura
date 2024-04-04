@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fi">
+{% extends "base.html" %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Ei oikeuksia</title>
+    </head>
+    {% block content %}
+        <body>
+            <h1>404 - Sivua ei löydy</h1>
+            <p> Etsimääsi sivua ei löytynyt.</br>
+            <p><a href="{% url 'etusivu' %}">Palaa etusivulle</a></p>
+        </body>
+    {% endblock content %}
+</html>
