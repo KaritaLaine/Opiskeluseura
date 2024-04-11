@@ -32,8 +32,7 @@
                 </p>
                 <!-- Tutustu huoneisiin -elementti, joka johtaa kirjautumissivulle -->
                 {% if user.is_authenticated %}
-                    <a href="{%url 'opiskeluhuoneet'%}"><button class="linkkiteksti">Opiskeluhuoneisiin pääset tutustumaan <br>
-                        kirjautumisen jälkeen.</button></a>
+                    <a href="{%url 'opiskeluhuoneet'%}"><button class="linkkiteksti">Tutustu opiskeluhuoneisiin.</button></a>
                 {% else %}
                     <button class="linkkiteksti" onclick="openForm()">Opiskeluhuoneisiin pääset tutustumaan <br>
                         kirjautumisen jälkeen.</button>
