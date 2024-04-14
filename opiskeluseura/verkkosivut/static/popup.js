@@ -7,18 +7,24 @@ function openForm() {
         var backdrop = document.createElement('div');
         backdrop.className = 'backdrop';
         document.body.appendChild(backdrop);
-        // Kun sulkemisnappia painetaan, siirrytään closeForm()-funktioon,
+        // Kun sulkemisnappia painetaan, siirrytään suljeForm()-funktioon,
             // joka poistaa lomakkeen ja taustan sumennus-elementin
         var closeButton = document.querySelector('.close');
         closeButton.addEventListener('click', function() {
-            closeForm();
+            suljeForm();
         });
     }
 }
-function closeForm() {
+function suljeForm() {
+    // Tallennetaan virheviestit muuttujiin
+    var virheviestit = document.getElementById('errorMessages');
     // Tyhjennetään lomakkeeseen syötetyt tiedot
     document.getElementById("käyttäjätunnus").value = "";
     document.getElementById("salasana").value = "";
+    // Tyhjennetään myös mahdolliset virheviestit
+    if (virheviestit) {
+        errorMessages.innerHTML = '';
+    }
     // Kun sulkunappia painetaan, kirjautumis-form poistuu näkyvistä
     document.getElementById("myForm").style.display = "none";
     // Kun kirjautumis-form suljetaan, poistetaan sumennus-elementti
