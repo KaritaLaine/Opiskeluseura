@@ -1,16 +1,27 @@
 function openForm() {
-    // Kun kirjautumisnappia painetaan, kirjautumis-form tulee esille
-    document.getElementById('myForm').style.display = 'block';
-    // Lisätään backdrop-elementti sivulle
-    var backdrop = document.createElement('div');
-    backdrop.className = 'backdrop';
-    document.body.appendChild(backdrop);
+    // Tarkistetaan onko lomake jo avoinna
+    if (!document.getElementById('myForm').style.display || document.getElementById('myForm').style.display === 'none') {
+        // Lomake ei ole vielä avoinna, joten luodaan se
+        document.getElementById('myForm').style.display = 'block';
+        // Lisätään sumennus-elementti sivulle
+        var backdrop = document.createElement('div');
+        backdrop.className = 'backdrop';
+        document.body.appendChild(backdrop);
+        // Kun sulkemisnappia painetaan, siirrytään closeForm()-funktioon,
+            // joka poistaa lomakkeen ja taustan sumennus-elementin
+        var closeButton = document.querySelector('.close');
+        closeButton.addEventListener('click', function() {
+            closeForm();
+        });
+    }
 }
-
 function closeForm() {
+    // Tyhjennetään lomakkeeseen syötetyt tiedot
+    document.getElementById("käyttäjätunnus").value = "";
+    document.getElementById("salasana").value = "";
     // Kun sulkunappia painetaan, kirjautumis-form poistuu näkyvistä
     document.getElementById("myForm").style.display = "none";
-    // Kun kirjautumis-form suljetaan, poistetaan backdrop-elementti
+    // Kun kirjautumis-form suljetaan, poistetaan sumennus-elementti
     var backdrop = document.querySelector('.backdrop');
     if (backdrop) {
         backdrop.parentNode.removeChild(backdrop);

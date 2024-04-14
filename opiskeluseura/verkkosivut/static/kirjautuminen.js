@@ -2,9 +2,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Tallennetaan virheviesti-, ja kirjautumisnappielementti muuttujiin
     const errorMessages = document.getElementById('errorMessages');
     const loginButton = document.getElementById('loginButton');
+    // Tallennetaan lomake muuttujaksi
+    const loginForm = document.getElementById('loginForm'); 
+
+    // Tarkistetaan, painetaanko enter-näppäintä lomake auki
+    loginForm.addEventListener('keypress', function(event) {
+        // Jos enter-näppäintä painetaan
+        if (event.key === 'Enter') {
+            // Lähetetään lomake samaan tapaan, kun kirjautumisnappia painettaessa
+            event.preventDefault();
+            loginButton.click();
+        }
+    });
 
     // Kun kirjautumisnappia painetaan
-    loginButton.addEventListener('click', function() {
+    loginButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
         // Tallennetaan käyttäjän syöttämä käyttäjätunnus ja salasana muuttujiin
         const käyttäjätunnus = document.getElementById('käyttäjätunnus').value;
         const salasana = document.getElementById('salasana').value;
@@ -26,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.location.href = response.redirect_url;
                     // Jos kirjautuminen ei onnistunut, näytetään virheviesti
                     } else {
-                        errorMessages.innerHTML = '<p class="error-message">' + response.message + '</p>';
+                        handleLoginError(response.message);
                     }
                 // Jos pyyntö epäonnistui, tulostetaan virheviesti
                 } else {
@@ -41,14 +55,19 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         
         // Haetaan CSRF-token, jonka tarkoitus on varmistaa, 
-            // että pyynnöt ovat aitoja ja  tulevat oikealta
-            // käyttäjältä
+        // että pyynnöt ovat aitoja ja tulevat oikealta
+        // käyttäjältä
         const csrftoken = getCookie('csrftoken');
         xhr.setRequestHeader('X-CSRFToken', csrftoken);
 
         // Lähetetään käyttäjätunnus ja salasana POST-pyynnön mukana sovellukselle
         xhr.send('käyttäjätunnus=' + encodeURIComponent(käyttäjätunnus) + '&salasana=' + encodeURIComponent(salasana));
     });
+
+    // Funktio virheviestin käsittelyä varten
+    function handleLoginError(message) {
+        errorMessages.innerHTML = '<p class="error-message">' + message + '</p>';
+    }
 
     // Etsii ja palauttaa csrf-tokenin arvon käyttäjän evästeistä.
     function getCookie(name) {
