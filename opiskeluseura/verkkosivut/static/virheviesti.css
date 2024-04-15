@@ -1,0 +1,15 @@
+.virhe {
+    text-align: center;
+    color: #383355;
+    padding-top: 5%;
+    font-size: 30px;
+}
+
+.virhe a {
+    color: #8f587c;
+    text-decoration: none;
+}
+
+.virhe a:hover {
+    color:#724562;
+}

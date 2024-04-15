@@ -5,80 +5,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opiskeluhuoneet</title>
-    {%load static%}
+    <!-- Lataa CSS-tiedosto -->
+    {% load static %}
     <link rel="stylesheet" href="{% static 'huoneet.css' %}">
-    <link rel="shortcut icon" href="{% static 'Tunnus-rosalila.svg' %}"/>
+    <!-- Lataa favicon -->
+    <link rel="shortcut icon" href="{% static 'Tunnus-rosalila.svg' %}">
 </head>
 
 <body>
-    <!-- Content -->
+    <!-- Sisältö -->
     <div class="content">
-        <!-- Left Sidebar -->
+        <!-- Vasen sivupalkki -->
         <div class="vasen-sivupalkki">
+            <!-- Logo -->
             <div class="logo">
                 <a href="{% url 'etusivu' %}">
                     <img src="{% static 'Tunnuslogo-rosa.svg' %}" alt="Logo">
                 </a>
             </div>
+            <!-- Aihealueet dropdown -->
             <div class="dropdown">
                 <button class="dropbtn">Matemaattiset</button>
                 <div class="dropdown-content">
-                    <a href="#">Calculus</a>
-                    <a href="#">Johdanto</a>
-                    <a href="#">MATLAB</a>
-                    <a href="#">Soveltava matikka</a>
+                    <a href="#" onclick="selectSubject('Calculus')">Calculus</a>
+                    <a href="#" onclick="selectSubject('Johdanto')">Johdanto</a>
+                    <a href="#" onclick="selectSubject('MATLAB')">MATLAB</a>
+                    <a href="#" onclick="selectSubject('Soveltava matikka')">Soveltava matikka</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Kielet</button>
                 <div class="dropdown-content">
-                    <a href="#">Suomi</a>
-                    <a href="#">Ruotsi</a>
+                    <a href="#" onclick="selectSubject('Suomi')">Suomi</a>
+                    <a href="#" onclick="selectSubject('Ruotsi')">Ruotsi</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Koodaus</button>
                 <div class="dropdown-content">
-                    <a href="#">Python</a>
-                    <a href="#">JavaScript</a>
-                    <a href="#">Rust</a>
-                    <a href="#">C#</a>
+                    <a href="#" onclick="selectSubject('Python')" >Python</a>
+                    <a href="#" onclick="selectSubject('JavaScript')" >JavaScript</a>
+                    <a href="#" onclick="selectSubject('Rust')" >Rust</a>
+                    <a href="#" onclick="selectSubject('C#')">C#</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Fysiikka</button>
                 <div class="dropdown-content">
-                    <a href="#">Perusteet</a>
+                    <a href="#" onclick="selectSubject('Perusteet')">Perusteet</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="dropbtn">Labrat</button>
                 <div class="dropdown-content">
-                    <a href="#">Elektroniikka</a>
-                    <a href="#">Fysikaaliset mittaukset</a>
-                    <a href="#">TVTT</a>
+                    <a href="#" onclick="selectSubject('Elektroniikka')">Elektroniikka</a>
+                    <a href="#" onclick="selectSubject('Fysikaaliset mittaukset')">Fysikaaliset mittaukset</a>
+                    <a href="#" onclick="selectSubject('TVTT')">TVTT</a>
                 </div>
             </div>
         </div>
-        <!-- Center Column -->
+        <!-- Keskisarakkeessa opiskeluhuone -->
         <div class="keskipalkki">
             <div class="otsikko">
-                <h1>Opiskeluhuone</h1>
+                <h1 id="aihealue-otsikko">Valitse aihealue</h1>
             </div>
-            <!-- Chat Window -->
+            <!-- Chat-ikkuna -->
             <div class="chat">
-                <!-- Chat Messages -->
-                <div class="chat-messages">
-                    <!-- Messages will appear here -->
+                <!-- Chat-viestit -->
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Viestit tulevat tähän -->
                 </div>
-                <!-- Chat Form -->
+                <!-- Chat-lomake -->
                 <form id="chat-form">
+                    <input type="hidden" id="username" value="{{ käyttäjätunnus }}"> <!-- Lisää käyttäjätunnus piilokenttään -->
                     <input type="text" id="message" placeholder="Kirjoita viesti...">
                     <button type="submit">&#x2B9E</button>
                 </form>
             </div>
         </div>
-        <!-- Right Sidebar -->
+        <!-- Oikea sivupalkki -->
         <div class="oikea-sivupalkki">
             <div class="menu">
                 <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Kirjaudu ulos</a>
@@ -86,14 +91,14 @@
             <div class="info">
                 <h2>Tervetuloa!</h2>
                 <p>Tämä on Turun ammattikorkeakoulun opiskelijoille tarkoitettu sivusto etäyhteydellä tapahtuvaa opiskelua varten.<br><br>
-                     Virtuaalisissa opiskeluhuoneissa opiskelijat voivat opiskella yhdessä eri aineita ja aiheita. Kysy rohkeasti apua, auta kaveria jos osaat ja ole ystävällinen.
+                    Virtuaalisissa opiskeluhuoneissa opiskelijat voivat opiskella yhdessä eri aineita ja aiheita. Kysy rohkeasti apua, auta kaveria jos osaat ja ole ystävällinen.
                     Opiskellaan ja opitaan yhdessä! <br> <br>
-                    
+
                     <b>Kaikki epäasiallinen käytös on ehdottomasti kielletty.</b>
             </div>
         </div>
     </div>
-    <!-- External JS Files -->
+    <!-- Lataa ulkoinen JavaScript-tiedosto -->
     <script src="{% static 'dropdown.js' %}"></script>
 </body>
 
