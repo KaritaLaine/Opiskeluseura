@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.http import JsonResponse
 from .forms import rekisterointiForm
-    
+
 # Etusivu ja kirjautumisominaisuus
 def etusivu(request):
     """
@@ -82,3 +82,7 @@ def opiskeluhuoneet(request):
 # 403-viesti
 def ei_paasya(request):
     return render(request, '403.html')
+
+# 404-viesti
+def virhe_404(request, exception):
+    return render(request, '404.html', status=404)
