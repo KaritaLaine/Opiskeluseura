@@ -1,4 +1,4 @@
-/* Reset and General Styles */
+/* Koko sivun asetukset */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -7,13 +7,13 @@ body {
   color: #333;
 }
 
-/* Container for Entire Page */
 .content {
   display: flex;
   min-height: 100vh;
 }
 
-/* Left Sidebar */
+/* Vasen sivupalkki */ 
+
 .vasen-sivupalkki {
   background-color: #383355;
   color: #fff;
@@ -68,7 +68,8 @@ body {
   background-color: #524c77;
 }
 
-/* Center Column */
+/* Keskipalkki eli chatti */
+
 .keskipalkki {
   flex: 1; 
   display: flex;
@@ -128,7 +129,8 @@ body {
   background-color: #9e658a;
 }
 
-/* Right Sidebar */
+/* Oikea sivupalkki */
+
 .oikea-sivupalkki {
   background-color: #383355;
   color: #fff;
