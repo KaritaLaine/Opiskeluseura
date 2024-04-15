@@ -72,10 +72,10 @@ def rekisterointi(request):
 
 # Opiskeluhuoneet
 def opiskeluhuoneet(request):
-    # Jos käyttäjä on kirjautunut, hänet ohjataan opiskeluhuoneet-sivulle
+    # Tarkistetaan, onko käyttäjä kirjautunut
     if request.user.is_authenticated:
-        return render(request, 'opiskeluhuoneet.html')
-    # Muuten hänet ohjataan 403 sivulle.
+        käyttäjätunnus = request.user.username  # Hae kirjautuneen käyttäjän käyttäjätunnus
+        return render(request, 'opiskeluhuoneet.html', {'käyttäjätunnus': käyttäjätunnus})
     else:
         return redirect('403')
     

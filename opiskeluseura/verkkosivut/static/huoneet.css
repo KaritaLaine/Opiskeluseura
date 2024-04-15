@@ -178,7 +178,7 @@ body {
 }
 
 .otsikko {
-  background-color: #dcc8f5c0;
+  background-color: #dcc8f5d8;
   color: #383355;
   text-align: center;
   padding: 20px;
@@ -263,4 +263,56 @@ body {
 
 .dropdown.active .dropbtn::after {
   transform: translateY(-50%) rotate(180deg);
+}
+
+/* Yksittäinen viesti */
+.message {
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  max-width: 50%;
+  word-wrap: break-word; /* Lisätään rivinvaihto pitkille sanoille */
+  border-style: solid;
+  border-color: rgba(171, 135, 238, 0.26);
+  border-width: 0.5px;
+}
+
+/* Omien viestien tyyli */
+.own-message {
+  background-color: #ede0f7;
+  align-self: flex-end;
+  margin-left: auto;
+  color: #383355;
+}
+
+/* Muiden viestien tyyli */
+.received {
+  background-color: #ebe3ff;
+  align-self: flex-start;
+  color: #333;
+}
+
+/* Viestin lähettäjä */
+.sender {
+  font-size: 0.8em;
+  color: #383355;
+  margin-bottom: 5px;
+}
+
+/* Chat-lomake */
+#chat-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+/* Chat-otsikko */
+#aihealue-otsikko {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #383355;
+  text-align: center;
+}
+
+.lahettaja {
+  text-align: right;
 }
