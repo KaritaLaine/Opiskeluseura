@@ -94,4 +94,6 @@ function selectSubject(subject) {
         chatMessages.appendChild(senderElement);
         chatMessages.appendChild(messageElement);
     }
+    // Vieritään chatti-ikkuna alaspäin automaattisesti
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }

@@ -46,7 +46,6 @@ body {
 
 .dropdown-content {
   display: none;
-  padding: 10px;
 }
 
 .dropdown.active .dropdown-content {
@@ -55,7 +54,6 @@ body {
 
 .dropdown-content a {
   display: block;
-  padding: 12px 0;
   font-size: 14px;
   text-decoration: none;
   color: #f9f9f9;
@@ -82,7 +80,6 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -91,7 +88,9 @@ body {
   overflow-y: auto;
   margin-bottom: 20px;
   font-size: 14px;
+  max-height: 80vh; /* Rajoita chatti-ikkunan korkeus */
 }
+
 
 #chat-form {
   width: 100%;
@@ -105,8 +104,9 @@ body {
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-right: 5px;
   height: 23px;
+  margin-left: 5px;
 }
 
 #message:focus {
@@ -123,6 +123,7 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin-right: 5px;
 }
 
 #chat-form button:hover {
@@ -273,10 +274,14 @@ body {
   border-radius: 8px;
   margin-bottom: 10px;
   max-width: 50%;
-  word-wrap: break-word; /* Lisätään rivinvaihto pitkille sanoille */
+  word-break: break-all;
+  overflow-wrap: break-word; /* Lisätään rivinvaihto pitkille sanoille */
   border-style: solid;
   border-color: rgba(171, 135, 238, 0.26);
   border-width: 0.5px;
+  white-space: normal;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 /* Omien viestien tyyli */
@@ -301,11 +306,6 @@ body {
   margin-bottom: 5px;
 }
 
-/* Chat-lomake */
-#chat-form {
-  display: flex;
-  margin-top: 10px;
-}
 
 /* Chat-otsikko */
 #aihealue-otsikko {
@@ -317,4 +317,5 @@ body {
 
 .lahettaja {
   text-align: right;
+  padding-right: 20px;
 }
