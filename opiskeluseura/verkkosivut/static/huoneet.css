@@ -62,12 +62,11 @@ body {
   position: relative;
 }
 
-
 .dropbtn:hover {
   background-color: #524c77;
 }
 
-.dropdown.active .alaotsikko {
+.dropdown.active .dropbtn {
   background-color: #524c77;
 }
 
@@ -108,6 +107,10 @@ body {
   background-color: #524c77;
 }
 
+/* Aktiivinen alaotsikko */
+.dropdown-content a.active {
+  background-color: #524c77;
+}
 
 
 /* KESKIPALKKI ELI CHATTI */
