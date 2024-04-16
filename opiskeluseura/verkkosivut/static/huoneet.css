@@ -1,7 +1,4 @@
 /* KOKO SIVUN ASETUKSET */
-
-
-
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -15,12 +12,7 @@ body {
   min-height: 100vh;
 }
 
-
-
-/* VASEN SIVUPALKKI */ 
-
-
-
+/* VASEN SIVUPALKKI */
 .vasen-sivupalkki {
   background-color: #383355;
   color: #fff;
@@ -112,11 +104,7 @@ body {
   background-color: #524c77;
 }
 
-
 /* KESKIPALKKI ELI CHATTI */
-
-
-
 .keskipalkki {
   flex: 1; 
   display: flex;
@@ -133,13 +121,20 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.oseura {
+  margin-bottom: 0;
+  margin-left: 20px !important;
+  margin: 5px;
+}
+
 /* Viestikentän asetukset ja koko */
 .chat-messages {
   flex: 1;
   overflow-y: auto;
   margin-bottom: 20px;
   font-size: 20px;
-  max-height: 80vh; 
+  max-height: 78vh; 
+  margin-top:20px;
 }
 
 #chat-form {
@@ -156,7 +151,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 5px;
-  height: 23px;
+  height: 35px;
   margin-left: 5px;
   margin: 5px;
 }
@@ -173,7 +168,7 @@ body {
   border: 2px solid #b07c9e;
   cursor: pointer;
   font-size: 16px;
-  padding: 10px 20px;
+  padding: 16px 20px;
   border-radius: 5px;
   margin-right: 5px;
 }
@@ -188,7 +183,6 @@ body {
   border-radius: 8px;
   margin-bottom: 10px;
   max-width: 50%;
-  word-break: break-all;
   overflow-wrap: break-word;
   border-style: solid;
   border-color: rgba(171, 135, 238, 0.26);
@@ -217,7 +211,7 @@ body {
 .sender {
   font-size: 0.8em;
   color: #383355;
-  margin-bottom: 5px;
+  margin-left: 20px
 }
 
 .lahettaja {
@@ -234,11 +228,7 @@ body {
   width: 100%;
 }
 
-
 /* OIKEA SIVUPALKKI */
-
-
-
 .oikea-sivupalkki {
   background-color: #383355;
   color: #fff;
