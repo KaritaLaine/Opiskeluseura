@@ -1,4 +1,7 @@
-/* Koko sivun asetukset */
+/* KOKO SIVUN ASETUKSET */
+
+
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -12,13 +15,17 @@ body {
   min-height: 100vh;
 }
 
-/* Vasen sivupalkki */ 
+
+
+/* VASEN SIVUPALKKI */ 
+
+
 
 .vasen-sivupalkki {
   background-color: #383355;
   color: #fff;
-  width: 20%;
-  max-width: 400px;
+  width: 25%;
+  max-width: 500px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,146 +33,6 @@ body {
   overflow-y: auto;
 }
 
-.dropbtn {
-  background-color: transparent;
-  color: #f9f9f9;
-  padding: 20px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-  transition: background-color 0.3s ease;
-  border-bottom: 1px solid #5a5480;
-  position: relative;
-}
-
-.dropbtn:hover {
-  background-color: #524c77;
-}
-
-.dropdown-content {
-  display: none;
-}
-
-.dropdown.active .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
-  display: block;
-  font-size: 14px;
-  text-decoration: none;
-  color: #f9f9f9;
-  border-bottom: 1px solid #5a5480;
-  padding: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #524c77;
-}
-
-/* Keskipalkki eli chatti */
-
-.keskipalkki {
-  flex: 1; 
-  display: flex;
-  flex-direction: column;
-}
-
-.chat {
-  background: rgb(67,64,117);
-  background: linear-gradient(90deg, rgba(67,64,117,1) 0%, rgba(230,0,255,0.09) 0%, rgba(121,0,255,0.09) 49%, rgba(176,93,193,0.09) 84%, rgba(190,0,255,0.09) 100%);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 20px;
-  font-size: 14px;
-  max-height: 80vh; /* Rajoita chatti-ikkunan korkeus */
-}
-
-
-#chat-form {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#message {
-  flex: 1;
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 5px;
-  height: 23px;
-  margin-left: 5px;
-}
-
-#message:focus {
-  outline: none;
-  border-color: #b07c9e;
-}
-
-#chat-form button {
-  background-color: #b07c9e;
-  color: white;
-  border: 2px solid #b07c9e;
-  cursor: pointer;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  margin-right: 5px;
-}
-
-#chat-form button:hover {
-  background-color: #9e658a;
-}
-
-/* Oikea sivupalkki */
-
-.oikea-sivupalkki {
-  background-color: #383355;
-  color: #fff;
-  width: 20%;
-  max-width: 300px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border-left: 1px solid #5a5480;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.logout-btn {
-  text-decoration: none;
-  color: #fff;
-  background-color: #b07c9e;
-  padding: 12px 40px; /* Increased padding for better click area */
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-top: auto; /* Push button to the bottom */
-  box-sizing: border-box; /* Include padding in width calculation */
-}
-
-.logout-btn:hover {
-  background-color: #9e658a;
-}
-
-/* Logo and Header */
 .logo {
   background-color: #383355;
   color: #fff;
@@ -173,89 +40,38 @@ body {
   padding: 20px;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .logo img {
   height: 80px;
-  width: 70%
+  width: 70%;
 }
 
-.otsikko {
-  background-color: #dcc8f5d8;
-  color: #383355;
-  text-align: center;
-  padding: 20px;
-  width: 100%;
-}
-
-/* Info Section */
-.info {
-  color: #fff;
-  text-align: left;
-}
-
-.info p {
-  text-align: left;
-}
-
-/* Contact Section */
-.contact {
-  color: #fff;
-  text-align: left;
-  margin-top: 20px;
-}
-
-.contact h2 {
-  margin-bottom: 10px;
-}
-
-.contact p {
-  margin-bottom: 10px;
-}
-
-/* Add spacing between elements */
-.oikea-sivupalkki > *:not(:last-child) {
-  margin-bottom: 20px;
-}
-
-/* Info Section */
-.info {
-  color: #fff;
-}
-
-.info h2 {
-  margin-bottom: 10px;
-}
-
-.info p {
-  margin-bottom: 10px;
-  text-align: center;
-  font-size:18px;
-}
-
-/* Dropdown Title Styling */
-.dropdown-title {
-  padding: 10px;
-  font-size: 16px;
+/* Napit */
+.dropbtn {
+  background-color: transparent;
   color: #f9f9f9;
-}
-
-/* Menu */
-.menu {
-  background-color: #383355;
-  color: #fff;
-  text-align: center;
-  padding: 10px 0;
+  padding: 20px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
   width: 100%;
-}
-
-.info {
-  color: #fff;
   text-align: center;
-  padding-top: 20px;
+  border-bottom: 1px solid #5a5480;
+  position: relative;
 }
 
-/* Arrow Icon for Dropdown */
+
+.dropbtn:hover {
+  background-color: #524c77;
+}
+
+.dropdown.active .alaotsikko {
+  background-color: #524c77;
+}
+
+/* Nuoli-ikoni */
 .dropbtn::after {
   content: '\25BE';
   position: absolute;
@@ -268,14 +84,109 @@ body {
   transform: translateY(-50%) rotate(180deg);
 }
 
-/* Yksittäinen viesti */
+/* Napeista avautuva sisältö */
+.dropdown-content {
+  display: none;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* Nappien linkkien tyylittely */
+.dropdown-content a {
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  color: #f9f9f9;
+  border-bottom: 1px solid #5a5480;
+  padding: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #524c77;
+}
+
+
+
+/* KESKIPALKKI ELI CHATTI */
+
+
+
+.keskipalkki {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.chat {
+  background: linear-gradient(90deg, rgba(67,64,117,1) 0%, 
+  rgba(230,0,255,0.09) 0%, rgba(121,0,255,0.09) 49%,
+  rgba(176,93,193,0.09) 84%, rgba(190,0,255,0.09) 100%);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Viestikentän asetukset ja koko */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  font-size: 20px;
+  max-height: 80vh; 
+}
+
+#chat-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Viestikenttä */
+#message {
+  flex: 1;
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+  height: 23px;
+  margin-left: 5px;
+  margin: 5px;
+}
+
+#message:focus {
+  outline: none;
+  border-color: #b07c9e;
+}
+
+/* Lähetä-nappi */
+#chat-form button {
+  background-color: #b07c9e;
+  color: white;
+  border: 2px solid #b07c9e;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+#chat-form button:hover {
+  background-color: #9e658a;
+}
+
+/* Chat-viesti */
 .message {
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 10px;
   max-width: 50%;
   word-break: break-all;
-  overflow-wrap: break-word; /* Lisätään rivinvaihto pitkille sanoille */
+  overflow-wrap: break-word;
   border-style: solid;
   border-color: rgba(171, 135, 238, 0.26);
   border-width: 0.5px;
@@ -284,7 +195,7 @@ body {
   margin-left: 20px;
 }
 
-/* Omien viestien tyyli */
+/* Itse lähetettyjen viestien tyyli */
 .own-message {
   background-color: #ede0f7;
   align-self: flex-end;
@@ -292,30 +203,84 @@ body {
   color: #383355;
 }
 
-/* Muiden viestien tyyli */
+/* Muiden lähettämien viestien tyyli */
 .received {
   background-color: #ebe3ff;
   align-self: flex-start;
   color: #333;
 }
 
-/* Viestin lähettäjä */
+/* Lähettäjän nimi */
 .sender {
   font-size: 0.8em;
   color: #383355;
   margin-bottom: 5px;
 }
 
-
-/* Chat-otsikko */
-#aihealue-otsikko {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: #383355;
-  text-align: center;
-}
-
 .lahettaja {
   text-align: right;
   padding-right: 20px;
+}
+
+/* Chat-otsikko */
+.otsikko {
+  background-color: #dcc8f5d8;
+  color: #383355;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+
+/* OIKEA SIVUPALKKI */
+
+
+
+.oikea-sivupalkki {
+  background-color: #383355;
+  color: #fff;
+  width: 20%;
+  max-width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 1px solid #5a5480;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+/* Kirjaudu ulos -nappi */
+.logout-btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #b07c9e;
+  padding: 12px 40px;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: auto;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.logout-btn:hover {
+  background-color: #9e658a;
+}
+
+/* Info-osio */
+.info {
+  color: #fff;
+  text-align: center;
+}
+
+.info p {
+  text-align: center;
+}
+
+.oikea-sivupalkki > *:not(:last-child) {
+  margin-bottom: 50px;
 }

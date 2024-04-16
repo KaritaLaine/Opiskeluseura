@@ -174,6 +174,7 @@ form {
 }
 
 /* Sulkemisnappi (X) */
+
 .close {
   color: #b07c9e;
   font-size: 35px;
@@ -191,7 +192,6 @@ form {
   color: #9e658a;
 }
 
-/* Logon tyyli */
 .form-logo {
   text-align: center;
   margin-bottom: 20px;
