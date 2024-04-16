@@ -80,12 +80,14 @@ footer {
 }
 
 .yhteystiedot {
-  color: #F9F9F9;
+  color: #ffefef;
 }
 
 .yhteystiedot p {
   margin-left: 3px;
   margin-top: -10px;
+  line-height:23px;
+  color:#fff3fb;
 }
 
 footer h3 {
@@ -101,6 +103,7 @@ footer h3 {
 
 .info {
   padding: 20px;
+  padding-bottom: 60px;
   display: flex;
   justify-content: center;
   flex-direction: column; 
@@ -174,6 +177,7 @@ form {
 }
 
 /* Sulkemisnappi (X) */
+
 .close {
   color: #b07c9e;
   font-size: 35px;
@@ -191,7 +195,6 @@ form {
   color: #9e658a;
 }
 
-/* Logon tyyli */
 .form-logo {
   text-align: center;
   margin-bottom: 20px;
