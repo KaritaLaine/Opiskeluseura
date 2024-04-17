@@ -1,4 +1,4 @@
-// JavaScript code to toggle the "active" class on the dropdown when the button is clicked
+// Lisätään klikattaville dropdown menun itemeille blockki, joka ns avaa ne eli laittaa näkyville.
 document.querySelectorAll('.dropbtn').forEach(item => {
     item.addEventListener('click', event => {
         const dropdownContent = item.nextElementSibling;
@@ -11,21 +11,25 @@ document.querySelectorAll('.dropbtn').forEach(item => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var dropdowns = document.querySelectorAll('.dropdown');
-
+    // Etsitään kaikki elementit, joilla on class 'dropdown'
+    var dropdowns = document.querySelectorAll('.dropdown'); 
+    // Käydään läpi jokainen 'dropdown'-class sisältävä elementti
     dropdowns.forEach(function(dropdown) {
+         // Vaihdetaan active-class tilaa, kun elementtiä klikataan
         dropdown.addEventListener('click', function() {
             dropdown.classList.toggle('active');
         });
     });
 });
 
+// Valitaan aihe ja päivitetään sivun otsikko ja viestit
 function selectSubject(subject) {
+    // Tallennetaan html elementit muuttujiksi
     var chatMessages = document.getElementById('chat-messages');
     var chatForm = document.getElementById('chat-form');
     var chatTitle = document.getElementById('aihealue-otsikko');
-
-    chatTitle.textContent = subject.charAt(0).toUpperCase() + subject.slice(1);
+    
+    chatTitle.textContent = subject.charAt(0).toUpperCase() + subject.slice(1); // Vaihdetaan otsikoksi valittu aihe isolla alkukirjaimella.
 
     // Poista kaikki aktiiviset alaotsikot
     var activeLinks = document.querySelectorAll('.dropdown-content a.active');
@@ -43,7 +47,7 @@ function selectSubject(subject) {
 
     // Hae tallennettu käyttäjänimi local storagesta
     function getUsername() {
-        return localStorage.getItem('käyttäjätunnus') || 'Anonyymi'; // Jos käyttäjänimeä ei ole, palauta 'Anonyymi'
+        return localStorage.getItem('käyttäjätunnus')
     }
 
     // Haetaan tallennetut viestit
@@ -69,8 +73,6 @@ function selectSubject(subject) {
                 message: message
             };
 
-            // Varmista, että newMessage on määritelty oikein
-            console.log('Uusi viesti:', newMessage);
 
             displayMessage(newMessage.sender, newMessage.message); // Näytetään viesti chatissa
 
@@ -79,7 +81,7 @@ function selectSubject(subject) {
             storedMessages.push(newMessage);
             localStorage.setItem('chatMessages_' + subject, JSON.stringify(storedMessages));
 
-            // Tyhjennä viestikentät
+            // Tyhjennä viestien syötekenttä
             messageInput.value = '';
         }
     };
@@ -90,7 +92,7 @@ function selectSubject(subject) {
         var messageElement = document.createElement('div');
         messageElement.textContent = msg;
 
-        // Tarkista onko viesti sinun lähettämäsi vai ei
+        // Tarkista onko viesti kirjautuneen käyttäjän lähettämä vai ei
         if (sender === getUsername()) {
             messageElement.classList.add('message', 'sent', 'own-message'); // Lisää luokat omille viesteille
         } else {
@@ -109,7 +111,7 @@ function selectSubject(subject) {
         chatMessages.appendChild(messageElement);
     }
 
-    // Vieritään chatti-ikkuna alaspäin automaattisesti
+    // Vieritetään chatti-ikkuna alaspäin automaattisesti
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
