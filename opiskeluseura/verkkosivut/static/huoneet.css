@@ -21,8 +21,8 @@ body {
 .vasen-sivupalkki {
   background-color: #383355;
   color: #fff;
-  width: 25%;
-  max-width: 500px;
+  width: 20%;
+  max-width: 450px;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -189,7 +189,7 @@ body {
 
 /* Chat-viesti */
 .message {
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
   margin-bottom: 10px;
   max-width: 50%;
@@ -247,8 +247,8 @@ body {
 .oikea-sivupalkki {
   background-color: #383355;
   color: #fff;
-  width: 20%;
-  max-width: 400px;
+  width: 18%;
+  max-width: 350px;
   height: 100vh;
   display: flex;
   flex-direction: column;
