@@ -74,15 +74,17 @@ def rekisterointi(request):
 def opiskeluhuoneet(request):
     # Tarkistetaan, onko käyttäjä kirjautunut
     if request.user.is_authenticated:
-        käyttäjätunnus = request.user.username  # Hae kirjautuneen käyttäjän käyttäjätunnus
+        # Tallennetaan kirjautuneen käyttäjän käyttäjätunnus muuttujaan
+        käyttäjätunnus = request.user.username 
         return render(request, 'opiskeluhuoneet.html', {'käyttäjätunnus': käyttäjätunnus})
     else:
+        # Jos ei olla kirjauduttu, palautetaan 403-viesti, ei oikeuksia.
         return redirect('403')
     
-# 403-viesti
+# 403-viesti, ei käyttöoikeutta
 def ei_paasya(request):
     return render(request, '403.html')
 
-# 404-viesti
+# 404-viesti, sivua ei ole olemassa
 def virhe_404(request, exception):
     return render(request, '404.html', status=404)

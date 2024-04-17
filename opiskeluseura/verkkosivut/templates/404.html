@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="fi">
-{% extends "base.html" %}
-    {% block content %}
-        <head>
-            <meta charset="UTF-8">
-            <title>Ei oikeuksia</title>
-            {% load static %}
-            <link rel="stylesheet" href="{% static 'virheviesti.css'%}">
-        </head>
-        <body>
-            <div class="virhe">
-                <h1>404 - Sivua ei löydy</h1>
-                <p> Etsimääsi sivua ei löytynyt.</br>
-                <p><a href="{% url 'etusivu' %}">Palaa etusivulle</a></p>
-            </div>
-        </body>
-    {% endblock %}
+    <!-- 404-virheviesti, ei oikeuksia -->
+    {% extends "base.html" %}
+        {% block content %}
+            <head>
+                <meta charset="UTF-8">
+                <title>Ei oikeuksia</title>
+                {% load static %}
+                <link rel="stylesheet" href="{% static 'virheviesti.css'%}">
+            </head>
+            <body>
+                <div class="virhe">
+                    <h1>404 - Sivua ei löydy</h1>
+                    <p> Etsimääsi sivua ei löytynyt.</br>
+                    <p><a href="{% url 'etusivu' %}">Palaa etusivulle</a></p>
+                </div>
+            </body>
+        {% endblock %}
 </html>

@@ -1,113 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opiskeluhuoneet</title>
-    <!-- Lataa CSS-tiedosto -->
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'huoneet.css' %}">
-    <!-- Lataa favicon -->
-    <link rel="shortcut icon" href="{% static 'Tunnus-rosalila.svg' %}">
-</head>
-
-<body>
-    <!-- Sisältö -->
-    <div class="content">
-        <!-- Vasen sivupalkki -->
-        <div class="vasen-sivupalkki">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="{% url 'etusivu' %}">
-                    <img src="{% static 'Tunnuslogo-rosa.svg' %}" alt="Logo">
-                </a>
-            </div>
-            <!-- Aihealueet dropdown -->
-            <div class="dropdown">
-                <button class="dropbtn">Matemaattiset</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="selectSubject('Calculus')">Calculus</a>
-                    <a href="#" onclick="selectSubject('Johdanto')">Johdanto</a>
-                    <a href="#" onclick="selectSubject('MATLAB')">MATLAB</a>
-                    <a href="#" onclick="selectSubject('Soveltava matikka')">Soveltava matikka</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Opiskeluhuoneet</title>
+        <!-- Lataa CSS-tiedosto -->
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'huoneet.css' %}">
+        <!-- Lataa favicon -->
+        <link rel="shortcut icon" href="{% static 'Tunnus-rosalila.svg' %}">
+    </head>
+    <body>
+        <div class="content">
+            <!-- Vasen sivupalkki -->
+            <div class="vasen-sivupalkki">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="{% url 'etusivu' %}">
+                        <img src="{% static 'Tunnuslogo-rosa.svg' %}" alt="Logo">
+                    </a>
                 </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Kielet</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="selectSubject('Suomi')">Suomi</a>
-                    <a href="#" onclick="selectSubject('Ruotsi')">Ruotsi</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Koodaus</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="selectSubject('Python')" >Python</a>
-                    <a href="#" onclick="selectSubject('JavaScript')" >JavaScript</a>
-                    <a href="#" onclick="selectSubject('Rust')" >Rust</a>
-                    <a href="#" onclick="selectSubject('C#')">C#</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Fysiikka</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="selectSubject('Perusteet')">Perusteet</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Labrat</button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="selectSubject('Elektroniikka')">Elektroniikka</a>
-                    <a href="#" onclick="selectSubject('Fysikaaliset mittaukset')">Fysikaaliset mittaukset</a>
-                    <a href="#" onclick="selectSubject('TVTT')">TVTT</a>
-                </div>
-            </div>
-        </div>
-        <!-- Keskisarakkeessa opiskeluhuone -->
-        <div class="keskipalkki">
-            <div class="otsikko">
-                <h1 id="aihealue-otsikko">Valitse oppiaine</h1>
-            </div>
-            <!-- Chat-ikkuna -->
-            <div class="chat">
-                <!-- Chat-viestit -->
-                <div class="chat-messages" id="chat-messages">
-                    <!-- Viestit tulevat tähän -->
-                    <!-- Ohjeviesti -->
-                    <p class="sender oseura"> OpiskeluSeura </p>
-                    <div class="message received">
-                        <p>Klikkaa vasemmalta haluamaasi oppiainetta ja aloita viestittely! </p>
-                    </div>
-                    <div class="message received">
-                        <p>🥰</p>
+                <!-- Oppiaineet, dropdown -->
+                <div class="dropdown">
+                    <button class="dropbtn">Matemaattiset</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectSubject('Calculus')">Calculus</a>
+                        <a href="#" onclick="selectSubject('Johdanto')">Johdanto</a>
+                        <a href="#" onclick="selectSubject('MATLAB')">MATLAB</a>
+                        <a href="#" onclick="selectSubject('Soveltava matikka')">Soveltava matikka</a>
                     </div>
                 </div>
-                <!-- Chat-lomake -->
-                <form id="chat-form">
-                    <input type="hidden" id="username" value="{{ käyttäjätunnus }}"> <!-- Lisää käyttäjätunnus piilokenttään -->
-                    <input type="text" id="message" placeholder="Kirjoita viesti...">
-                    <button type="submit">&#x2B9E</button>
-                </form>
+                <div class="dropdown">
+                    <button class="dropbtn">Kielet</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectSubject('Suomi')">Suomi</a>
+                        <a href="#" onclick="selectSubject('Ruotsi')">Ruotsi</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Koodaus</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectSubject('Python')" >Python</a>
+                        <a href="#" onclick="selectSubject('JavaScript')" >JavaScript</a>
+                        <a href="#" onclick="selectSubject('Rust')" >Rust</a>
+                        <a href="#" onclick="selectSubject('C#')">C#</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Fysiikka</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectSubject('Perusteet')">Perusteet</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Labrat</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectSubject('Elektroniikka')">Elektroniikka</a>
+                        <a href="#" onclick="selectSubject('Fysikaaliset mittaukset')">Fysikaaliset mittaukset</a>
+                        <a href="#" onclick="selectSubject('TVTT')">TVTT</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Keskipalkki, chatti -->
+            <div class="keskipalkki">
+                <div class="otsikko">
+                    <h1 id="aihealue-otsikko">Valitse oppiaine</h1>
+                </div>
+                <!-- Chat-ikkuna -->
+                <div class="chat">
+                    <!-- Chat-viestit -->
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Ohjeviesti -->
+                        <p class="sender oseura"> OpiskeluSeura </p>
+                        <div class="message received">
+                            <p>Klikkaa vasemmalta haluamaasi oppiainetta ja aloita viestittely! </p>
+                        </div>
+                        <div class="message received">
+                            <p>🥰</p>
+                        </div>
+                    </div>
+                    <form id="chat-form">
+                        <input type="hidden" id="username" value="{{ käyttäjätunnus }}"> <!-- Lisää käyttäjätunnus piilokenttään -->
+                        <!-- Syötekenttä -->
+                        <input type="text" id="message" placeholder="Kirjoita viesti...">
+                        <button type="submit">&#x2B9E</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Oikea sivupalkki -->
+            <div class="oikea-sivupalkki">
+                <div class="menu">
+                    <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Kirjaudu ulos</a>
+                </div>
+                <!-- Infoteksti -->
+                <div class="info">
+                    <h2>Tervetuloa!</h2>
+                    <p>Tämä on Turun ammattikorkeakoulun opiskelijoille tarkoitettu sivusto etäyhteydellä tapahtuvaa opiskelua varten.<br><br>
+                        Virtuaalisissa opiskeluhuoneissa opiskelijat voivat opiskella yhdessä eri aineita ja aiheita. Kysy rohkeasti apua, auta kaveria jos osaat ja ole ystävällinen.
+                        Opiskellaan ja opitaan yhdessä! <br> <br>
+
+                        <b>Kaikki epäasiallinen käytös on ehdottomasti kielletty.</b>
+                </div>
+                <!-- Yhteystiedot -->
+                <div class="yt">
+                    <h3>Yhteystiedot</h3>
+                    <p> Tuotekehitys, ryhmä A4 <br>
+                        juho.e.nissinen@edu.turkuamk.fi
+                    <br> karita.laine@edu.turkuamk.fi
+                </div>
             </div>
         </div>
-        <!-- Oikea sivupalkki -->
-        <div class="oikea-sivupalkki">
-            <div class="menu">
-                <a href="{% url 'uloskirjautuminen' %}" class="logout-btn">Kirjaudu ulos</a>
-            </div>
-            <div class="info">
-                <h2>Tervetuloa!</h2>
-                <p>Tämä on Turun ammattikorkeakoulun opiskelijoille tarkoitettu sivusto etäyhteydellä tapahtuvaa opiskelua varten.<br><br>
-                    Virtuaalisissa opiskeluhuoneissa opiskelijat voivat opiskella yhdessä eri aineita ja aiheita. Kysy rohkeasti apua, auta kaveria jos osaat ja ole ystävällinen.
-                    Opiskellaan ja opitaan yhdessä! <br> <br>
-
-                    <b>Kaikki epäasiallinen käytös on ehdottomasti kielletty.</b>
-            </div>
-        </div>
-    </div>
-    <!-- Lataa ulkoinen JavaScript-tiedosto -->
-    <script src="{% static 'dropdown.js' %}"></script>
-</body>
-
+        <!-- Liitetään js-tiedosto -->
+        <script src="{% static 'huoneet.js' %}"></script>
+    </body>
 </html>

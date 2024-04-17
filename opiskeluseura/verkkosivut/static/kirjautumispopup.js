@@ -1,9 +1,9 @@
 function openForm() {
-    // Tarkistetaan onko lomake jo avoinna
+    // Tarkistetaan onko lomake jo auki
     if (!document.getElementById('myForm').style.display || document.getElementById('myForm').style.display === 'none') {
-        // Lomake ei ole vielä avoinna, joten luodaan se
+        // Lomake ei ole auki, joten avataan se
         document.getElementById('myForm').style.display = 'block';
-        // Lisätään sumennus-elementti sivulle
+        // Lisätään sumennus-elementti kirjautumislomakkeen taustalle
         var backdrop = document.createElement('div');
         backdrop.className = 'backdrop';
         document.body.appendChild(backdrop);
@@ -25,9 +25,8 @@ function suljeForm() {
     if (virheviestit) {
         errorMessages.innerHTML = '';
     }
-    // Kun sulkunappia painetaan, kirjautumis-form poistuu näkyvistä
+    // Kun sulkemisnappia painetaan, lomake ja taustan sumennus poistuu näkyvistä
     document.getElementById("myForm").style.display = "none";
-    // Kun kirjautumis-form suljetaan, poistetaan sumennus-elementti
     var backdrop = document.querySelector('.backdrop');
     if (backdrop) {
         backdrop.parentNode.removeChild(backdrop);

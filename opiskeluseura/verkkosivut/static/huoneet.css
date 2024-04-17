@@ -12,7 +12,12 @@ body {
   min-height: 100vh;
 }
 
+
+
 /* VASEN SIVUPALKKI */
+
+
+
 .vasen-sivupalkki {
   background-color: #383355;
   color: #fff;
@@ -104,7 +109,12 @@ body {
   background-color: #524c77;
 }
 
+
+
 /* KESKIPALKKI ELI CHATTI */
+
+
+
 .keskipalkki {
   flex: 1; 
   display: flex;
@@ -207,7 +217,7 @@ body {
   color: #333;
 }
 
-/* Lähettäjän nimi */
+/* Viestin lähettäjä */
 .sender {
   font-size: 0.8em;
   color: #383355;
@@ -219,7 +229,7 @@ body {
   padding-right: 20px;
 }
 
-/* Chat-otsikko */
+/* Chatin otsikko, oppiaine */
 .otsikko {
   background-color: #dcc8f5d8;
   color: #383355;
@@ -228,7 +238,12 @@ body {
   width: 100%;
 }
 
+
+
 /* OIKEA SIVUPALKKI */
+
+
+
 .oikea-sivupalkki {
   background-color: #383355;
   color: #fff;
@@ -276,4 +291,13 @@ body {
 
 .oikea-sivupalkki > *:not(:last-child) {
   margin-bottom: 50px;
+}
+
+/* Yhteystiedot */
+.yt {
+  font-size: 10px;
+  text-align: right;
+  align-self: flex-end;
+  margin-top: auto;
+  color: rgba(255, 255, 255, 0.308);
 }

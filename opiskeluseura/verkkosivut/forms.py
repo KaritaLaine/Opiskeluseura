@@ -19,7 +19,7 @@ class rekisterointiForm(UserCreationForm):
         }
     )
     
-    # Salasanan syöttökenttä
+    # Salasanan syötekenttä
     password1 = forms.CharField(
         label='Salasana',
         min_length=8,

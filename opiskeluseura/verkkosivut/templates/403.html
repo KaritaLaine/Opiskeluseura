@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="fi">
-{% extends "base.html" %}
-    {% block content %}
-        <head>
-            <meta charset="UTF-8">
-            <title>Ei oikeuksia</title>
-            {% load static %}
-            <link rel="stylesheet" href="{% static 'virheviesti.css'%}">
-        </head>
-        <body>
-            <div class="virhe">
-                <h1>403 - Pääsy estetty </h1>
-                <p>Sinulla ei ole käyttöoikeutta tähän sivuun. <br>
-                     Kirjauduthan ensin sisään!</p>
-                <p><a href="{% url 'etusivu' %}">Palaa etusivulle</a></p>
-            </div>
-        </body>
-    {% endblock %}
+    <!-- 403-virheviesti, ei oikeuksia -->
+    {% extends "base.html" %}
+        {% block content %}
+            <head>
+                <meta charset="UTF-8">
+                <title>Ei oikeuksia</title>
+                {% load static %}
+                <link rel="stylesheet" href="{% static 'virheviesti.css'%}">
+            </head>
+            <body>
+                <div class="virhe">
+                    <h1>403 - Pääsy estetty </h1>
+                    <p>Sinulla ei ole käyttöoikeutta tähän sivuun. <br>
+                        Kirjauduthan ensin sisään!</p>
+                    <p><a href="{% url 'etusivu' %}">Palaa etusivulle</a></p>
+                </div>
+            </body>
+        {% endblock %}
 </html>
